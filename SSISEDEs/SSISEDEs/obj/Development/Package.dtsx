@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{98A8F8D4-0DD2-4F48-8465-34AED92A904A}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{16F1C5E9-7F1B-4F46-A5C0-E074E1964360}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -403,7 +403,7 @@ where [refTable].[IdEDE] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT Dim EDEs\Order by.Outputs[Sort Output].Columns[IdEDE]};</property>
+                  name="ParameterMap">#{Package\DFT Dim EDEs\DB EDEs Energia.Outputs[OLE DB Source Output].Columns[IdEDE]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -432,8 +432,7 @@ where [refTable].[IdEDE] = ?</property>
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="IdEDE"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\DFT Dim EDEs\Order by.Outputs[Sort Output].Columns[IdEDE]">
+                      lineageId="Package\DFT Dim EDEs\DB EDEs Energia.Outputs[OLE DB Source Output].Columns[IdEDE]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -707,16 +706,15 @@ where [refTable].[IdEDE] = ?</property>
                       cachedLength="50"
                       cachedName="Nombre"
                       externalMetadataColumnId="Package\DFT Dim EDEs\Update DW EDEs Energia.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\DFT Dim EDEs\Order by.Outputs[Sort Output].Columns[Nombre]" />
+                      lineageId="Package\DFT Dim EDEs\Lookup.Outputs[Lookup Match Output].Columns[Nombre]" />
                     <inputColumn
                       refId="Package\DFT Dim EDEs\Update DW EDEs Energia.Inputs[OLE DB Command Input].Columns[IdEDE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="IdEDE"
-                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\DFT Dim EDEs\Update DW EDEs Energia.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\DFT Dim EDEs\Order by.Outputs[Sort Output].Columns[IdEDE]" />
+                      lineageId="Package\DFT Dim EDEs\Lookup.Outputs[Lookup Match Output].Columns[IdEDE]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -790,17 +788,17 @@ where [refTable].[IdEDE] = ?</property>
               startId="Package\DFT Dim EDEs\Lookup.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT Dim EDEs.Paths[Lookup No Match Output]"
-              endId="Package\DFT Dim EDEs\DW EDEs Energia.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT Dim EDEs\Order by.Inputs[Sort Input]"
               name="Lookup No Match Output"
               startId="Package\DFT Dim EDEs\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\DFT Dim EDEs.Paths[OLE DB Source Output]"
-              endId="Package\DFT Dim EDEs\Order by.Inputs[Sort Input]"
+              endId="Package\DFT Dim EDEs\Lookup.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\DFT Dim EDEs\DB EDEs Energia.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DFT Dim EDEs.Paths[Sort Output]"
-              endId="Package\DFT Dim EDEs\Lookup.Inputs[Lookup Input]"
+              endId="Package\DFT Dim EDEs\DW EDEs Energia.Inputs[OLE DB Destination Input]"
               name="Sort Output"
               startId="Package\DFT Dim EDEs\Order by.Outputs[Sort Output]" />
           </paths>
@@ -819,7 +817,1048 @@ where [refTable].[IdEDE] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Dim Sucursal\DB Sucursal"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DB Sucursal"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Sucursal]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Sucursal\DB Sucursal.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.EDEs_Energias]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.EDEs_Energias]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdSucursal]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[IdSucursal]"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdSucursal]"
+                      name="IdSucursal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[Nombre]"
+                      length="50"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdEDE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[IdEDE]"
+                      length="20"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdEDE]"
+                      name="IdEDE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[IdProvincia]"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdProvincia]"
+                      name="IdProvincia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdMunicipio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[IdMunicipio]"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdMunicipio]"
+                      name="IdMunicipio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[Direccion]"
+                      length="100"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Direccion]"
+                      name="Direccion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[Telefono]"
+                      length="20"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Telefono]"
+                      name="Telefono"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[IdSucursal]"
+                      dataType="i4"
+                      name="IdSucursal" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[IdEDE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="IdEDE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[IdProvincia]"
+                      dataType="i4"
+                      name="IdProvincia" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[IdMunicipio]"
+                      dataType="i4"
+                      name="IdMunicipio" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Direccion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].ExternalColumns[Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Telefono" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[IdSucursal]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[IdSucursal]"
+                      name="IdSucursal" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[IdEDE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[IdEDE]"
+                      name="IdEDE" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[IdProvincia]"
+                      name="IdProvincia" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[IdMunicipio]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[IdMunicipio]"
+                      name="IdMunicipio" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[Direccion]"
+                      name="Direccion" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[Telefono]"
+                      name="Telefono" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Sucursal\DW Dim Sucursal"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DW Dim Sucursal"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimSucursal]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].Columns[IdSucursal]"
+                      cachedDataType="i4"
+                      cachedName="IdSucursal"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].ExternalColumns[IdSucursal]"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdSucursal]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].ExternalColumns[Nombre]"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].Columns[Direccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Direccion"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].ExternalColumns[Direccion]"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Direccion]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].Columns[Telefono]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Telefono"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].ExternalColumns[Telefono]"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Telefono]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].ExternalColumns[IdSucursal]"
+                      dataType="i4"
+                      name="IdSucursal" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].ExternalColumns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].ExternalColumns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Direccion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input].ExternalColumns[Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Telefono" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\DW Dim Sucursal.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\DW Dim Sucursal.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\DW Dim Sucursal.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Sucursal\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimSucursal]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimSucursal]) [refTable]
+where [refTable].[IdSucursal] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IdSucursal" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Nombre" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Direccion" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Telefono" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdSucursal]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Sucursal\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Sucursal\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Lookup.Inputs[Lookup Input].Columns[IdSucursal]"
+                      cachedDataType="i4"
+                      cachedName="IdSucursal"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdSucursal]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IdSucursal</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Dim Sucursal\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[IdSucursal]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[IdSucursal]"
+                      name="IdSucursal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IdSucursal</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="50"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Nombre</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="100"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Direccion]"
+                      name="Direccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Direccion</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="20"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Telefono]"
+                      name="Telefono"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Telefono</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Dim Sucursal\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Dim Sucursal\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Sucursal\Order by"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Order by"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input].Columns[IdSucursal]"
+                      cachedDataType="i4"
+                      cachedName="IdSucursal"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdSucursal]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input].Columns[IdEDE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="IdEDE"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdEDE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input].Columns[IdProvincia]"
+                      cachedDataType="i4"
+                      cachedName="IdProvincia"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdProvincia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input].Columns[IdMunicipio]"
+                      cachedDataType="i4"
+                      cachedName="IdMunicipio"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdMunicipio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input].Columns[Direccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Direccion"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Direccion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input].Columns[Telefono]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Telefono"
+                      lineageId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Telefono]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdSucursal]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdSucursal]"
+                      name="IdSucursal"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdSucursal]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Nombre]"
+                      name="Nombre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdEDE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdEDE]"
+                      name="IdEDE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdEDE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdProvincia]"
+                      name="IdProvincia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdProvincia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdMunicipio]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[IdMunicipio]"
+                      name="IdMunicipio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[IdMunicipio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Direccion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Direccion]"
+                      name="Direccion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Direccion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output].Columns[Telefono]"
+                      name="Telefono">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output].Columns[Telefono]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Sucursal\Update Dim Sucursal"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update Dim Sucursal"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update DimSucursal set Nombre = ?, Direccion = ?, 
+Telefono = ? where IdSucursal = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].Columns[Direccion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Direccion"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Direccion]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].Columns[Telefono]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Telefono"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[Telefono]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].Columns[IdSucursal]"
+                      cachedDataType="i4"
+                      cachedName="IdSucursal"
+                      externalMetadataColumnId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output].Columns[IdSucursal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\Update Dim Sucursal.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Sucursal\Update Dim Sucursal.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Sucursal\Update Dim Sucursal.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Dim Sucursal.Paths[Lookup Match Output]"
+              endId="Package\DFT Dim Sucursal\Update Dim Sucursal.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Dim Sucursal.Paths[Lookup No Match Output]"
+              endId="Package\DFT Dim Sucursal\Order by.Inputs[Sort Input]"
+              name="Lookup No Match Output"
+              startId="Package\DFT Dim Sucursal\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT Dim Sucursal.Paths[OLE DB Source Output]"
+              endId="Package\DFT Dim Sucursal\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Dim Sucursal\DB Sucursal.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT Dim Sucursal.Paths[Sort Output]"
+              endId="Package\DFT Dim Sucursal\DW Dim Sucursal.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\DFT Dim Sucursal\Order by.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -923,13 +1962,13 @@ where [refTable].[IdEDE] = ?</property>
           Id="Package\DFT Dim Sucursal"
           TopLeft="535.666666666667,156.666666666667" />
         <NodeLayout
-          Size="168,42"
-          Id="Package\DFT Dim Ubicacion"
-          TopLeft="305,258.666666666667" />
-        <NodeLayout
           Size="158,42"
           Id="Package\DFT Dim Tiempo"
           TopLeft="57,172.666666666667" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\DFT Dim Ubicacion"
+          TopLeft="305,258.666666666667" />
         <NodeLayout
           Size="183,42"
           Id="Package\DFT Fact Energia"
@@ -1079,168 +2118,169 @@ where [refTable].[IdEDE] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="158,42"
-          Id="Package\DFT Dim EDEs\DB EDEs Energia"
-          TopLeft="391,139" />
-        <NodeLayout
           Size="113,42"
           Id="Package\DFT Dim EDEs\Lookup"
-          TopLeft="454,317" />
+          TopLeft="405.666666666667,265.333333333333" />
         <NodeLayout
           Size="162,42"
           Id="Package\DFT Dim EDEs\DW EDEs Energia"
-          TopLeft="273,440" />
+          TopLeft="266.333333333333,487.5" />
         <NodeLayout
           Size="199,42"
           Id="Package\DFT Dim EDEs\Update DW EDEs Energia"
           TopLeft="600.076923076923,458" />
         <NodeLayout
-          Size="120,42"
-          Id="Package\DFT Dim EDEs\Order by"
-          TopLeft="313.076923076923,243.076923076923" />
+          Size="158,42"
+          Id="Package\DFT Dim EDEs\DB EDEs Energia"
+          TopLeft="391,139" />
         <EdgeLayout
-          Id="Package\DFT Dim EDEs.Paths[OLE DB Source Output]"
-          TopLeft="470,181">
+          Id="Package\DFT Dim EDEs.Paths[Lookup Match Output]"
+          TopLeft="462.166666666667,307.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-96.923076923077,62.0769230769231"
+              EndConnector="237.410256410256,150.666666666667"
               Start="0,0"
-              End="-96.923076923077,54.5769230769231">
+              End="237.410256410256,143.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.0384615384615" />
+                    End="0,71.3333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.0384615384615"
-                    Point2="0,31.0384615384615"
-                    Point3="-4,31.0384615384615" />
+                    Point1="0,71.3333333333333"
+                    Point2="0,75.3333333333333"
+                    Point3="4,75.3333333333333" />
                   <mssgle:LineSegment
-                    End="-92.923076923077,31.0384615384615" />
+                    End="233.410256410256,75.3333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="-92.923076923077,31.0384615384615"
-                    Point2="-96.923076923077,31.0384615384615"
-                    Point3="-96.923076923077,35.0384615384615" />
+                    Point1="233.410256410256,75.3333333333333"
+                    Point2="237.410256410256,75.3333333333333"
+                    Point3="237.410256410256,79.3333333333333" />
                   <mssgle:LineSegment
-                    End="-96.923076923077,54.5769230769231" />
+                    End="237.410256410256,143.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.5137414863781,80.3333333333333,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim EDEs.Paths[OLE DB Source Output]"
+          TopLeft="466.083333333333,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84.3333333333333"
+              Start="0,0"
+              End="0,76.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.8333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,42"
+          Id="Package\DFT Dim EDEs\Order by"
+          TopLeft="240,374.166666666667" />
+        <EdgeLayout
+          Id="Package\DFT Dim EDEs.Paths[Lookup No Match Output]"
+          TopLeft="444.666666666667,307.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144.666666666667,66.8333333333334"
+              Start="0,0"
+              End="-144.666666666667,59.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2931937172775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2931937172775"
+                    Point2="0,27.2931937172775"
+                    Point3="-4,27.2931937172775" />
+                  <mssgle:LineSegment
+                    End="-140.666666666667,27.2931937172775" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140.666666666667,27.2931937172775"
+                    Point2="-144.666666666667,27.2931937172775"
+                    Point3="-144.666666666667,31.2931937172775" />
+                  <mssgle:LineSegment
+                    End="-144.666666666667,59.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-128.139720052083,32.2931937172775,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT Dim EDEs.Paths[Sort Output]"
-          TopLeft="373.076923076923,285.076923076923">
+          TopLeft="300,416.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="137.423076923077,31.9230769230769"
+              EndConnector="47.3333333333334,71.3333333333333"
               Start="0,0"
-              End="137.423076923077,24.4230769230769">
+              End="47.3333333333334,63.8333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.9615384615385" />
+                    End="0,31.6666666666667" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.9615384615385"
-                    Point2="0,15.9615384615385"
-                    Point3="4,15.9615384615385" />
+                    Point1="0,31.6666666666667"
+                    Point2="0,35.6666666666667"
+                    Point3="4,35.6666666666667" />
                   <mssgle:LineSegment
-                    End="133.423076923077,15.9615384615385" />
+                    End="43.3333333333334,35.6666666666667" />
                   <mssgle:CubicBezierSegment
-                    Point1="133.423076923077,15.9615384615385"
-                    Point2="137.423076923077,15.9615384615385"
-                    Point3="137.423076923077,19.9615384615385" />
+                    Point1="43.3333333333334,35.6666666666667"
+                    Point2="47.3333333333334,35.6666666666667"
+                    Point3="47.3333333333334,39.6666666666667" />
                   <mssgle:LineSegment
-                    End="137.423076923077,24.4230769230769" />
+                    End="47.3333333333334,63.8333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Dim EDEs.Paths[Lookup No Match Output]"
-          TopLeft="510.5,359">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-156.5,81"
-              Start="0,0"
-              End="-156.5,73.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.5"
-                    Point2="0,40.5"
-                    Point3="-4,40.5" />
-                  <mssgle:LineSegment
-                    End="-152.5,40.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-152.5,40.5"
-                    Point2="-156.5,40.5"
-                    Point3="-156.5,44.5" />
-                  <mssgle:LineSegment
-                    End="-156.5,73.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-134.05638671875,45.5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Dim EDEs.Paths[Lookup Match Output]"
-          TopLeft="528,359">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="171.576923076923,99"
-              Start="0,0"
-              End="171.576923076923,91.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.4293193717277" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.4293193717277"
-                    Point2="0,40.4293193717277"
-                    Point3="4,40.4293193717277" />
-                  <mssgle:LineSegment
-                    End="167.576923076923,40.4293193717277" />
-                  <mssgle:CubicBezierSegment
-                    Point1="167.576923076923,40.4293193717277"
-                    Point2="171.576923076923,40.4293193717277"
-                    Point3="171.576923076923,44.4293193717277" />
-                  <mssgle:LineSegment
-                    End="171.576923076923,91.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="37.5970748197115,45.4293193717277,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim EDEs\DW EDEs Energia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT Dim EDEs\DB EDEs Energia">
     <Properties>
@@ -1277,8 +2317,212 @@ where [refTable].[IdEDE] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT Dim Sucursal">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\DFT Dim Sucursal\DB Sucursal"
+          TopLeft="408,109" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\DFT Dim Sucursal\Lookup"
+          TopLeft="454,236.833333333333" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DFT Dim Sucursal\Update Dim Sucursal"
+          TopLeft="634,440.166666666667" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DFT Dim Sucursal\DW Dim Sucursal"
+          TopLeft="210,491" />
+        <EdgeLayout
+          Id="Package\DFT Dim Sucursal.Paths[Lookup Match Output]"
+          TopLeft="528,278.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="194.5,161.333333333333"
+              Start="0,0"
+              End="194.5,153.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.8848167539267" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.8848167539267"
+                    Point2="0,65.8848167539267"
+                    Point3="4,65.8848167539267" />
+                  <mssgle:LineSegment
+                    End="190.5,65.8848167539267" />
+                  <mssgle:CubicBezierSegment
+                    Point1="190.5,65.8848167539267"
+                    Point2="194.5,65.8848167539267"
+                    Point3="194.5,69.8848167539267" />
+                  <mssgle:LineSegment
+                    End="194.5,153.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="49.05861328125,70.8848167539267,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim Sucursal.Paths[OLE DB Source Output]"
+          TopLeft="475.5,151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35,85.8333333333334"
+              Start="0,0"
+              End="35,78.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.9166666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.9166666666667"
+                    Point2="0,42.9166666666667"
+                    Point3="4,42.9166666666667" />
+                  <mssgle:LineSegment
+                    End="31,42.9166666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31,42.9166666666667"
+                    Point2="35,42.9166666666667"
+                    Point3="35,46.9166666666667" />
+                  <mssgle:LineSegment
+                    End="35,78.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,42"
+          Id="Package\DFT Dim Sucursal\Order by"
+          TopLeft="287.5,380" />
+        <EdgeLayout
+          Id="Package\DFT Dim Sucursal.Paths[Lookup No Match Output]"
+          TopLeft="493,278.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-145.5,101.166666666667"
+              Start="0,0"
+              End="-145.5,93.6666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.3141361256545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.3141361256545"
+                    Point2="0,41.3141361256545"
+                    Point3="-4,41.3141361256545" />
+                  <mssgle:LineSegment
+                    End="-141.5,41.3141361256545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-141.5,41.3141361256545"
+                    Point2="-145.5,41.3141361256545"
+                    Point3="-145.5,45.3141361256545" />
+                  <mssgle:LineSegment
+                    End="-145.5,93.6666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-128.55638671875,46.3141361256545,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim Sucursal.Paths[Sort Output]"
+          TopLeft="347.5,422">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57,68.9999999999999"
+              Start="0,0"
+              End="-57,61.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="-53,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-53,34.5"
+                    Point2="-57,34.5"
+                    Point3="-57,38.5" />
+                  <mssgle:LineSegment
+                    End="-57,61.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Dim EDEs\DW EDEs Energia">
+    design-time-name="Package\DFT Dim Sucursal\DB Sucursal">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim Sucursal\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimSucursal]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim Sucursal\DW Dim Sucursal">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
