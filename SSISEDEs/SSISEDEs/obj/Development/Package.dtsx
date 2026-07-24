@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{16F1C5E9-7F1B-4F46-A5C0-E074E1964360}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{ACEE3E42-7002-43B8-B01D-172270E1859F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1888,7 +1888,1897 @@ Telefono = ? where IdSucursal = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Dim Ubicacion\DB Municipio"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DB Municipio"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Municipio]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Ubicacion\DB Municipio.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.EDEs_Energias]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.EDEs_Energias]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[IdMunicipio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].ExternalColumns[IdMunicipio]"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[IdMunicipio]"
+                      name="IdMunicipio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].ExternalColumns[Nombre]"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].ExternalColumns[IdProvincia]"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[IdProvincia]"
+                      name="IdProvincia"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].ExternalColumns[IdMunicipio]"
+                      dataType="i4"
+                      name="IdMunicipio" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].ExternalColumns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].ExternalColumns[IdProvincia]"
+                      dataType="i4"
+                      name="IdProvincia" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[IdMunicipio]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[IdMunicipio]"
+                      name="IdMunicipio" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[IdProvincia]"
+                      name="IdProvincia" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\DB Provincia"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DB Provincia"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Provincia]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Ubicacion\DB Provincia.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.EDEs_Energias]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.EDEs_Energias]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].ExternalColumns[IdProvincia]"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[IdProvincia]"
+                      name="IdProvincia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].ExternalColumns[Nombre]"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[IdRegion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].ExternalColumns[IdRegion]"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[IdRegion]"
+                      name="IdRegion"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].ExternalColumns[IdProvincia]"
+                      dataType="i4"
+                      name="IdProvincia" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].ExternalColumns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].ExternalColumns[IdRegion]"
+                      dataType="i4"
+                      name="IdRegion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[IdProvincia]"
+                      name="IdProvincia" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[IdRegion]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[IdRegion]"
+                      name="IdRegion" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\DB Region"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DB Region"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Region]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Ubicacion\DB Region.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.EDEs_Energias]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.EDEs_Energias]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].Columns[IdRegion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].ExternalColumns[IdRegion]"
+                      lineageId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].Columns[IdRegion]"
+                      name="IdRegion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].ExternalColumns[Nombre]"
+                      length="20"
+                      lineageId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].Columns[Nombre]"
+                      name="Nombre"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].ExternalColumns[IdRegion]"
+                      dataType="i4"
+                      name="IdRegion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].ExternalColumns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Nombre" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output].Columns[IdRegion]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output].Columns[IdRegion]"
+                      name="IdRegion" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output].Columns[Nombre]"
+                      name="Nombre" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DW Dim Ubicacion"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimUbicacion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].Columns[IdMunicipio]"
+                      cachedDataType="i4"
+                      cachedName="IdMunicipio"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].ExternalColumns[IdUbicacion]"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[IdMunicipio]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].Columns[NombreProvincia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreProvincia"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].ExternalColumns[Provincia]"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreProvincia]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].Columns[NombreMunicipio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreMunicipio"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].ExternalColumns[Municipio]"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreMunicipio]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].Columns[NombreRegion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NombreRegion"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreRegion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].ExternalColumns[IdUbicacion]"
+                      dataType="i4"
+                      name="IdUbicacion" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].ExternalColumns[Provincia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Provincia" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].ExternalColumns[Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Municipio" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimUbicacion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimUbicacion]) [refTable]
+where [refTable].[IdUbicacion] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IdUbicacion" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Provincia" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Municipio" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[IdMunicipio]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Ubicacion\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Lookup.Inputs[Lookup Input].Columns[IdMunicipio]"
+                      cachedDataType="i4"
+                      cachedName="IdMunicipio"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[IdMunicipio]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IdUbicacion</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Dim Ubicacion\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Dim Ubicacion\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Dim Ubicacion\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Left Input].Columns[IdRegion]"
+                      cachedDataType="i4"
+                      cachedName="IdRegion"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[IdRegion]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Left Input].Columns[IdProvincia]"
+                      cachedDataType="i4"
+                      cachedName="IdProvincia"
+                      lineageId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[IdProvincia]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Left Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      lineageId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[Nombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Right Input].Columns[IdRegion]"
+                      cachedDataType="i4"
+                      cachedName="IdRegion"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 1.Outputs[Sort Output].Columns[IdRegion]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Right Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Nombre"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 1.Outputs[Sort Output].Columns[Nombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[IdProvincia]"
+                      name="IdProvincia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Left Input].Columns[IdProvincia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[NombreProvincia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[NombreProvincia]"
+                      name="NombreProvincia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Left Input].Columns[Nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[NombreRegion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[NombreRegion]"
+                      name="NombreRegion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Right Input].Columns[Nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\Merge Join 1"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Left Input].Columns[IdProvincia]"
+                      cachedDataType="i4"
+                      cachedName="IdProvincia"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[IdProvincia]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Left Input].Columns[NombreProvincia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreProvincia"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[NombreProvincia]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Left Input].Columns[NombreRegion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NombreRegion"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[NombreRegion]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Right Input].Columns[IdProvincia]"
+                      cachedDataType="i4"
+                      cachedName="IdProvincia"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[IdProvincia]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Right Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[Nombre]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Right Input].Columns[IdMunicipio]"
+                      cachedDataType="i4"
+                      cachedName="IdMunicipio"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[IdMunicipio]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreMunicipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreMunicipio]"
+                      name="NombreMunicipio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Right Input].Columns[Nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreProvincia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreProvincia]"
+                      name="NombreProvincia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Left Input].Columns[NombreProvincia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreRegion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreRegion]"
+                      name="NombreRegion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Left Input].Columns[NombreRegion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[IdMunicipio]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[IdMunicipio]"
+                      name="IdMunicipio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Right Input].Columns[IdMunicipio]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update DimUbicacion set Provincia = ?, 
+Municipio = ?, Region = ?
+where IdUbicacion = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Dim Ubicacion\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_EDEs_Energia]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[NombreProvincia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreProvincia"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreProvincia]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[NombreMunicipio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreMunicipio"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreMunicipio]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[NombreRegion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NombreRegion"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreRegion]" />
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].Columns[IdMunicipio]"
+                      cachedDataType="i4"
+                      cachedName="IdMunicipio"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[IdMunicipio]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Dim Ubicacion\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort.Inputs[Sort Input].Columns[IdProvincia]"
+                      cachedDataType="i4"
+                      cachedName="IdProvincia"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[IdProvincia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort.Inputs[Sort Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[Nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort.Inputs[Sort Input].Columns[IdRegion]"
+                      cachedDataType="i4"
+                      cachedName="IdRegion"
+                      lineageId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[IdRegion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[IdProvincia]"
+                      name="IdProvincia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[IdProvincia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[Nombre]"
+                      name="Nombre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[Nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[IdRegion]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output].Columns[IdRegion]"
+                      name="IdRegion"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output].Columns[IdRegion]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 1.Inputs[Sort Input].Columns[IdRegion]"
+                      cachedDataType="i4"
+                      cachedName="IdRegion"
+                      lineageId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].Columns[IdRegion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 1.Inputs[Sort Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Nombre"
+                      lineageId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].Columns[Nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 1.Outputs[Sort Output].Columns[IdRegion]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 1.Outputs[Sort Output].Columns[IdRegion]"
+                      name="IdRegion"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].Columns[IdRegion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 1.Outputs[Sort Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 1.Outputs[Sort Output].Columns[Nombre]"
+                      name="Nombre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output].Columns[Nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\Sort 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Sort 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 2.Inputs[Sort Input].Columns[IdProvincia]"
+                      cachedDataType="i4"
+                      cachedName="IdProvincia"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[IdProvincia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 2.Inputs[Sort Input].Columns[NombreProvincia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreProvincia"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[NombreProvincia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 2.Inputs[Sort Input].Columns[NombreRegion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NombreRegion"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[NombreRegion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[IdProvincia]"
+                      name="IdProvincia"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[IdProvincia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[NombreProvincia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[NombreProvincia]"
+                      name="NombreProvincia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[NombreProvincia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[NombreRegion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output].Columns[NombreRegion]"
+                      name="NombreRegion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output].Columns[NombreRegion]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\Sort 3"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 3"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Sort 3.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 3.Inputs[Sort Input].Columns[IdMunicipio]"
+                      cachedDataType="i4"
+                      cachedName="IdMunicipio"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[IdMunicipio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 3.Inputs[Sort Input].Columns[Nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nombre"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[Nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 3.Inputs[Sort Input].Columns[IdProvincia]"
+                      cachedDataType="i4"
+                      cachedName="IdProvincia"
+                      lineageId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[IdProvincia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[IdMunicipio]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[IdMunicipio]"
+                      name="IdMunicipio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[IdMunicipio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[Nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[Nombre]"
+                      name="Nombre">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[Nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[IdProvincia]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output].Columns[IdProvincia]"
+                      name="IdProvincia"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output].Columns[IdProvincia]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Dim Ubicacion\Sort 4"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 4"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Dim Ubicacion\Sort 4.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 4.Inputs[Sort Input].Columns[NombreMunicipio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreMunicipio"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreMunicipio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 4.Inputs[Sort Input].Columns[NombreProvincia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreProvincia"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreProvincia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 4.Inputs[Sort Input].Columns[NombreRegion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NombreRegion"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreRegion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 4.Inputs[Sort Input].Columns[IdMunicipio]"
+                      cachedDataType="i4"
+                      cachedName="IdMunicipio"
+                      lineageId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[IdMunicipio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreMunicipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreMunicipio]"
+                      name="NombreMunicipio">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreMunicipio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreProvincia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreProvincia]"
+                      name="NombreProvincia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreProvincia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreRegion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[NombreRegion]"
+                      name="NombreRegion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[NombreRegion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[IdMunicipio]"
+                      dataType="i4"
+                      lineageId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output].Columns[IdMunicipio]"
+                      name="IdMunicipio"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output].Columns[IdMunicipio]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Lookup Match Output]"
+              endId="Package\DFT Dim Ubicacion\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Lookup No Match Output]"
+              endId="Package\DFT Dim Ubicacion\DW Dim Ubicacion.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\DFT Dim Ubicacion\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Merge Join Output]"
+              endId="Package\DFT Dim Ubicacion\Sort 2.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\DFT Dim Ubicacion\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Merge Join Output1]"
+              endId="Package\DFT Dim Ubicacion\Sort 4.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\DFT Dim Ubicacion\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[OLE DB Source Output]"
+              endId="Package\DFT Dim Ubicacion\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Dim Ubicacion\DB Provincia.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[OLE DB Source Output1]"
+              endId="Package\DFT Dim Ubicacion\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Dim Ubicacion\DB Region.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[OLE DB Source Output2]"
+              endId="Package\DFT Dim Ubicacion\Sort 3.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Dim Ubicacion\DB Municipio.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Sort Output]"
+              endId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DFT Dim Ubicacion\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Sort Output1]"
+              endId="Package\DFT Dim Ubicacion\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DFT Dim Ubicacion\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Sort Output2]"
+              endId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DFT Dim Ubicacion\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Sort Output3]"
+              endId="Package\DFT Dim Ubicacion\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DFT Dim Ubicacion\Sort 3.Outputs[Sort Output]" />
+            <path
+              refId="Package\DFT Dim Ubicacion.Paths[Sort Output4]"
+              endId="Package\DFT Dim Ubicacion\Lookup.Inputs[Lookup Input]"
+              name="Sort Output"
+              startId="Package\DFT Dim Ubicacion\Sort 4.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2130,71 +4020,13 @@ Telefono = ? where IdSucursal = ?</property>
           Id="Package\DFT Dim EDEs\Update DW EDEs Energia"
           TopLeft="600.076923076923,458" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\DFT Dim EDEs\DB EDEs Energia"
-          TopLeft="391,139" />
-        <EdgeLayout
-          Id="Package\DFT Dim EDEs.Paths[Lookup Match Output]"
-          TopLeft="462.166666666667,307.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="237.410256410256,150.666666666667"
-              Start="0,0"
-              End="237.410256410256,143.166666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,71.3333333333333"
-                    Point2="0,75.3333333333333"
-                    Point3="4,75.3333333333333" />
-                  <mssgle:LineSegment
-                    End="233.410256410256,75.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="233.410256410256,75.3333333333333"
-                    Point2="237.410256410256,75.3333333333333"
-                    Point3="237.410256410256,79.3333333333333" />
-                  <mssgle:LineSegment
-                    End="237.410256410256,143.166666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="70.5137414863781,80.3333333333333,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Dim EDEs.Paths[OLE DB Source Output]"
-          TopLeft="466.083333333333,181">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,84.3333333333333"
-              Start="0,0"
-              End="0,76.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,76.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="120,42"
           Id="Package\DFT Dim EDEs\Order by"
           TopLeft="240,374.166666666667" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DFT Dim EDEs\DB EDEs Energia"
+          TopLeft="391,139" />
         <EdgeLayout
           Id="Package\DFT Dim EDEs.Paths[Lookup No Match Output]"
           TopLeft="444.666666666667,307.333333333333">
@@ -2232,6 +4064,42 @@ Telefono = ? where IdSucursal = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\DFT Dim EDEs.Paths[Lookup Match Output]"
+          TopLeft="462.166666666667,307.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="237.410256410256,150.666666666667"
+              Start="0,0"
+              End="237.410256410256,143.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,71.3333333333333"
+                    Point2="0,75.3333333333333"
+                    Point3="4,75.3333333333333" />
+                  <mssgle:LineSegment
+                    End="233.410256410256,75.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="233.410256410256,75.3333333333333"
+                    Point2="237.410256410256,75.3333333333333"
+                    Point3="237.410256410256,79.3333333333333" />
+                  <mssgle:LineSegment
+                    End="237.410256410256,143.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.513741486378,80.3333333333333,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\DFT Dim EDEs.Paths[Sort Output]"
           TopLeft="300,416.166666666667">
           <EdgeLayout.Curve>
@@ -2257,6 +4125,28 @@ Telefono = ? where IdSucursal = ?</property>
                     Point3="47.3333333333334,39.6666666666667" />
                   <mssgle:LineSegment
                     End="47.3333333333334,63.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim EDEs.Paths[OLE DB Source Output]"
+          TopLeft="466.083333333333,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84.3333333333333"
+              Start="0,0"
+              End="0,76.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.8333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2300,7 +4190,7 @@ Telefono = ? where IdSucursal = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2310,7 +4200,7 @@ Telefono = ? where IdSucursal = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2323,55 +4213,57 @@ Telefono = ? where IdSucursal = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="135,42"
-          Id="Package\DFT Dim Sucursal\DB Sucursal"
-          TopLeft="408,109" />
+          Size="177,42"
+          Id="Package\DFT Dim Sucursal\Update Dim Sucursal"
+          TopLeft="634,440.166666666667" />
         <NodeLayout
           Size="113,42"
           Id="Package\DFT Dim Sucursal\Lookup"
           TopLeft="454,236.833333333333" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\DFT Dim Sucursal\Update Dim Sucursal"
-          TopLeft="634,440.166666666667" />
+          Size="120,42"
+          Id="Package\DFT Dim Sucursal\Order by"
+          TopLeft="287.5,380" />
         <NodeLayout
           Size="161,42"
           Id="Package\DFT Dim Sucursal\DW Dim Sucursal"
           TopLeft="210,491" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\DFT Dim Sucursal\DB Sucursal"
+          TopLeft="408,109" />
         <EdgeLayout
-          Id="Package\DFT Dim Sucursal.Paths[Lookup Match Output]"
-          TopLeft="528,278.833333333333">
+          Id="Package\DFT Dim Sucursal.Paths[Sort Output]"
+          TopLeft="347.5,422">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="194.5,161.333333333333"
+              EndConnector="-57,68.9999999999999"
               Start="0,0"
-              End="194.5,153.833333333333">
+              End="-57,61.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.8848167539267" />
+                    End="0,30.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,61.8848167539267"
-                    Point2="0,65.8848167539267"
-                    Point3="4,65.8848167539267" />
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
                   <mssgle:LineSegment
-                    End="190.5,65.8848167539267" />
+                    End="-53,34.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="190.5,65.8848167539267"
-                    Point2="194.5,65.8848167539267"
-                    Point3="194.5,69.8848167539267" />
+                    Point1="-53,34.5"
+                    Point2="-57,34.5"
+                    Point3="-57,38.5" />
                   <mssgle:LineSegment
-                    End="194.5,153.833333333333" />
+                    End="-57,61.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="49.05861328125,70.8848167539267,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2408,10 +4300,6 @@ Telefono = ? where IdSucursal = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\DFT Dim Sucursal\Order by"
-          TopLeft="287.5,380" />
         <EdgeLayout
           Id="Package\DFT Dim Sucursal.Paths[Lookup No Match Output]"
           TopLeft="493,278.833333333333">
@@ -2449,42 +4337,57 @@ Telefono = ? where IdSucursal = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT Dim Sucursal.Paths[Sort Output]"
-          TopLeft="347.5,422">
+          Id="Package\DFT Dim Sucursal.Paths[Lookup Match Output]"
+          TopLeft="528,278.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-57,68.9999999999999"
+              EndConnector="194.5,161.333333333333"
               Start="0,0"
-              End="-57,61.4999999999999">
+              End="194.5,153.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,61.8848167539267" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="-4,34.5" />
+                    Point1="0,61.8848167539267"
+                    Point2="0,65.8848167539267"
+                    Point3="4,65.8848167539267" />
                   <mssgle:LineSegment
-                    End="-53,34.5" />
+                    End="190.5,65.8848167539267" />
                   <mssgle:CubicBezierSegment
-                    Point1="-53,34.5"
-                    Point2="-57,34.5"
-                    Point3="-57,38.5" />
+                    Point1="190.5,65.8848167539267"
+                    Point2="194.5,65.8848167539267"
+                    Point3="194.5,69.8848167539267" />
                   <mssgle:LineSegment
-                    End="-57,61.4999999999999" />
+                    End="194.5,153.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="49.05861328125,70.8848167539267,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim Sucursal\DW Dim Sucursal">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT Dim Sucursal\DB Sucursal">
     <Properties>
@@ -2504,7 +4407,7 @@ Telefono = ? where IdSucursal = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2514,15 +4417,451 @@ Telefono = ? where IdSucursal = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT Dim Ubicacion">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="138,42"
+          Id="Package\DFT Dim Ubicacion\DB Provincia"
+          TopLeft="282,110" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT Dim Ubicacion\DB Region"
+          TopLeft="502,92" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT Dim Ubicacion\DB Municipio"
+          TopLeft="731,162" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\DFT Dim Ubicacion\Sort"
+          TopLeft="302,253" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\DFT Dim Ubicacion\Sort 1"
+          TopLeft="532,255" />
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[OLE DB Source Output]"
+          TopLeft="351,152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101"
+              Start="0,0"
+              End="0,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[OLE DB Source Output1]"
+          TopLeft="579,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,121"
+              Start="0,0"
+              End="0,113.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,113.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\DFT Dim Ubicacion\Merge Join"
+          TopLeft="410,393" />
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Sort Output]"
+          TopLeft="351,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,98"
+              Start="0,0"
+              End="124,90.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45"
+                    Point2="0,49"
+                    Point3="4,49" />
+                  <mssgle:LineSegment
+                    End="120,49" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120,49"
+                    Point2="124,49"
+                    Point3="124,53" />
+                  <mssgle:LineSegment
+                    End="124,90.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Sort Output1]"
+          TopLeft="581,297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-85.6666666666667,96"
+              Start="0,0"
+              End="-85.6666666666667,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.8996960486322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.8996960486322"
+                    Point2="0,56.8996960486322"
+                    Point3="-4,56.8996960486322" />
+                  <mssgle:LineSegment
+                    End="-81.6666666666667,56.8996960486322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-81.6666666666667,56.8996960486322"
+                    Point2="-85.6666666666667,56.8996960486322"
+                    Point3="-85.6666666666667,60.8996960486322" />
+                  <mssgle:LineSegment
+                    End="-85.6666666666667,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="107,42"
+          Id="Package\DFT Dim Ubicacion\Sort 2"
+          TopLeft="670,332" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\DFT Dim Ubicacion\Sort 3"
+          TopLeft="848,334" />
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[OLE DB Source Output2]"
+          TopLeft="806,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.5,130"
+              Start="0,0"
+              End="95.5,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61"
+                    Point2="0,65"
+                    Point3="4,65" />
+                  <mssgle:LineSegment
+                    End="91.5,65" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.5,65"
+                    Point2="95.5,65"
+                    Point3="95.5,69" />
+                  <mssgle:LineSegment
+                    End="95.5,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Merge Join Output]"
+          TopLeft="540,414">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130,-61"
+              Start="0,0"
+              End="122.5,-61">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61,0"
+                    Point2="65,0"
+                    Point3="65,-4" />
+                  <mssgle:LineSegment
+                    End="65,-57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65,-57"
+                    Point2="65,-61"
+                    Point3="69,-61" />
+                  <mssgle:LineSegment
+                    End="122.5,-61" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DFT Dim Ubicacion\Merge Join 1"
+          TopLeft="754,464" />
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Sort Output2]"
+          TopLeft="723.5,374">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.1666666666666,90"
+              Start="0,0"
+              End="78.1666666666666,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.3854907539118" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.3854907539118"
+                    Point2="0,53.3854907539118"
+                    Point3="4,53.3854907539118" />
+                  <mssgle:LineSegment
+                    End="74.1666666666666,53.3854907539118" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.1666666666666,53.3854907539118"
+                    Point2="78.1666666666666,53.3854907539118"
+                    Point3="78.1666666666666,57.3854907539118" />
+                  <mssgle:LineSegment
+                    End="78.1666666666666,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Sort Output3]"
+          TopLeft="901.5,376">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-56.1666666666666,88"
+              Start="0,0"
+              End="-56.1666666666666,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.199146514936" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.199146514936"
+                    Point2="0,52.199146514936"
+                    Point3="-4,52.199146514936" />
+                  <mssgle:LineSegment
+                    End="-52.1666666666666,52.199146514936" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.1666666666666,52.199146514936"
+                    Point2="-56.1666666666666,52.199146514936"
+                    Point3="-56.1666666666666,56.199146514936" />
+                  <mssgle:LineSegment
+                    End="-56.1666666666666,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="107,42"
+          Id="Package\DFT Dim Ubicacion\Sort 4"
+          TopLeft="676,580" />
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Merge Join Output1]"
+          TopLeft="823.5,506">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-94,74"
+              Start="0,0"
+              End="-94,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="-4,37" />
+                  <mssgle:LineSegment
+                    End="-90,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-90,37"
+                    Point2="-94,37"
+                    Point3="-94,41" />
+                  <mssgle:LineSegment
+                    End="-94,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT Dim Ubicacion\DW Dim Ubicacion"
+          TopLeft="177,490" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\DFT Dim Ubicacion\Lookup"
+          TopLeft="509,486" />
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Sort Output4]"
+          TopLeft="713,580">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-130,-52"
+              Start="0,0"
+              End="-130,-44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-22.0248982523342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-22.0248982523342"
+                    Point2="0,-26.0248982523342"
+                    Point3="-4,-26.0248982523342" />
+                  <mssgle:LineSegment
+                    End="-126,-26.0248982523342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126,-26.0248982523342"
+                    Point2="-130,-26.0248982523342"
+                    Point3="-130,-30.0248982523342" />
+                  <mssgle:LineSegment
+                    End="-130,-44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT Dim Ubicacion\OLE DB Command"
+          TopLeft="334,632" />
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Lookup No Match Output]"
+          TopLeft="509,509">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-166,0"
+              Start="0,0"
+              End="-158.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-158.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-135.05638671875,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Dim Ubicacion.Paths[Lookup Match Output]"
+          TopLeft="548,528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-131,104"
+              Start="0,0"
+              End="-131,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.4712041884817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.4712041884817"
+                    Point2="0,42.4712041884817"
+                    Point3="-4,42.4712041884817" />
+                  <mssgle:LineSegment
+                    End="-127,42.4712041884817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-127,42.4712041884817"
+                    Point2="-131,42.4712041884817"
+                    Point3="-131,46.4712041884817" />
+                  <mssgle:LineSegment
+                    End="-131,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-113.69138671875,47.4712041884817,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Dim Sucursal\DW Dim Sucursal">
+    design-time-name="Package\DFT Dim Ubicacion\DB Provincia">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2531,6 +4870,68 @@ Telefono = ? where IdSucursal = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim Ubicacion\DB Region">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim Ubicacion\DB Municipio">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim Ubicacion\DW Dim Ubicacion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Dim Ubicacion\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimUbicacion]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
