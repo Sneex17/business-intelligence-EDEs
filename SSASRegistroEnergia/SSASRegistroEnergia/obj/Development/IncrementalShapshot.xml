@@ -33,35 +33,35 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>W0pUPhcjUs20/Py+CpY2LlnuJkk=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
+        <TimeStamp>XdoayHBFDeWqFGCvoCjN0V5BDIs=26/7/2026 19:40:3826/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>Dim Sucursal</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>L0/eQUqTqGwbGSUXUuNr0vls3uE=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
+        <TimeStamp>ooCjqcRKjksDnTQWeuS1ZMTuzxE=26/7/2026 19:43:4426/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>Dim Tiempo</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>slASEQ1lqPZCkoXIUAV6EdvIJW0=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
+        <TimeStamp>NMOYrqzJiKbTOl6KfxAVD1Eh8Oo=26/7/2026 19:40:2326/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>Dim Ubicacion</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>smVHdcBb0liQtJmyMg09LHQLuBk=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
+        <TimeStamp>wS1/mTTnjPx1Oh6zHXWfImwPpGg=26/7/2026 19:44:1326/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>Dim EDE</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>I/T5nTPywwvMAUqp/z7IPtNrcfk=26/7/2026 19:32:4726/7/2026 19:32:27MBvZee1DuxKMzzv8ykWDd1wLf38=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
+        <TimeStamp>SR8eQ3CpvzrXLLicL9D1VrZ+Mx0=26/7/2026 19:43:4426/7/2026 19:32:27MBvZee1DuxKMzzv8ykWDd1wLf38=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>EDEs_EnergiaCube</String>
         </ID>
@@ -78,5 +78,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-07-26T23:33:12.996667Z</LastDeployed>
+  <LastDeployed>2026-07-26T23:44:25.98Z</LastDeployed>
 </DeploymentSnapshot>
