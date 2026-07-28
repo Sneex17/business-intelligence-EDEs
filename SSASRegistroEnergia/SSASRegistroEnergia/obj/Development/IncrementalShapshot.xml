@@ -40,7 +40,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ooCjqcRKjksDnTQWeuS1ZMTuzxE=26/7/2026 19:43:4426/7/2026 19:32:27</TimeStamp>
+        <TimeStamp>6mztyPBGhoT32e9bGO5FfZz52/k=28/7/2026 16:27:2426/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>Dim Tiempo</String>
         </ID>
@@ -61,7 +61,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>w+joVAby+59ZKR/w0PtOPlqXgaY=28/7/2026 13:13:0126/7/2026 19:32:27MBvZee1DuxKMzzv8ykWDd1wLf38=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
+        <TimeStamp>OMluiekMnaSxvwslWdTUT/bLQB8=28/7/2026 13:37:3526/7/2026 19:32:27MBvZee1DuxKMzzv8ykWDd1wLf38=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>EDEs_EnergiaCube</String>
         </ID>
@@ -78,5 +78,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-07-28T17:13:11.716667Z</LastDeployed>
+  <LastDeployed>2026-07-28T20:28:36.276667Z</LastDeployed>
 </DeploymentSnapshot>

@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="47dee1c8-5bf2-4cbe-87f1-387fc9dcbe61" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4463c53c-f105-4a3a-9849-57d6199b56bb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>EDEs_EnergiaCube</ID>
   <Name>EDEs_EnergiaCube</Name>
   <CreatedTimestamp>0001-01-01T04:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="20" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1616" scrolltop="5213" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="180" x="26855" y="21114" backcolor="2632756" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="20" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1616" scrolltop="5213" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="180" x="26855" y="21114" backcolor="2632756" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
@@ -187,110 +187,110 @@
   <LastProcessed>0001-01-01T04:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="c94d17c0-26df-4b1c-b4a1-4dec91eb990e">
+    <Dimension dwd:design-time-name="42fb9a89-5ab7-4047-9425-8e96ca4d7dd3">
       <ID>Dim Sucursal</ID>
       <Name>Dim Sucursal</Name>
       <DimensionID>Dim Sucursal</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="4a9498e0-ae17-40d3-9e14-5c64053e75b2">
+        <Attribute dwd:design-time-name="9f18d49f-9997-4d4c-8d63-fc7e33c698ad">
           <AttributeID>Id Sucursal</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="357cfb5c-1b44-4986-a0a1-0796d087f5f9">
+        <Attribute dwd:design-time-name="637ee0b1-3ab9-4385-b30f-fc2ee69e2529">
           <AttributeID>Nombre</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="7e9550e1-261b-44e8-bbd6-939d75d5eb2b">
+        <Attribute dwd:design-time-name="141d53b2-52ff-42ec-a67a-4c860582d35d">
           <AttributeID>Direccion</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="5b07d8b0-898e-41a5-b7ea-973b794219d7">
+        <Attribute dwd:design-time-name="2723101c-311a-42d8-bd52-4f3d57582582">
           <AttributeID>Telefono</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="e77eeb94-e170-4b7c-8d7e-da0e85e00ae3">
+    <Dimension dwd:design-time-name="2ee95827-4c73-44be-96f9-a94d3125f6e9">
       <ID>Dim Tiempo</ID>
       <Name>Dim Tiempo</Name>
       <DimensionID>Dim Tiempo</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="caafa689-998a-4d2c-8a9d-fe39506a8b59">
+        <Attribute dwd:design-time-name="290a31e5-a84e-478c-b211-e4ceda5a8f94">
           <AttributeID>Id Tiempo</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="c16e9611-6bd2-4f3a-8fc9-3fbcccd90339">
+        <Attribute dwd:design-time-name="80599ab4-a910-4c68-a8ba-6238736eda69">
           <AttributeID>Fecha</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="15a28293-f2e2-4cd7-ae69-135228e2b7f7">
+        <Attribute dwd:design-time-name="0a9d3cec-332e-44e3-91c7-2007f6700392">
           <AttributeID>Anio</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="d16ef6da-3e3a-43d3-b153-13d762213cee">
+        <Attribute dwd:design-time-name="ff7630b5-e4f4-46f0-a329-8ed5a00ce52f">
           <AttributeID>Id Trimestre</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="f43e13b5-d07f-4926-b915-06640f5b7ee9">
+        <Attribute dwd:design-time-name="bdb57ee2-e231-49a3-bbc4-49c82c92e95f">
           <AttributeID>Id Mes</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="228c0f89-1a5d-4187-bdc6-da0f114d3e05">
+        <Attribute dwd:design-time-name="5a6ae53a-2560-4929-8d32-62e800876b6e">
           <AttributeID>Id Dia</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="52586e19-c303-479e-b35b-e1d0c635249e">
+        <Hierarchy dwd:design-time-name="740b6c72-5adf-4385-b29a-b82e8f9aa595">
           <HierarchyID>Jerarquía 3</HierarchyID>
         </Hierarchy>
-        <Hierarchy dwd:design-time-name="80399cb0-4852-4a87-9936-2d90bfa61764">
+        <Hierarchy dwd:design-time-name="c16d0310-56cc-42cd-b6c3-6e871c363c1c">
           <HierarchyID>Jerarquía</HierarchyID>
         </Hierarchy>
-        <Hierarchy dwd:design-time-name="41b5cedd-d3e0-45c0-85bd-531b4fbdb22a">
+        <Hierarchy dwd:design-time-name="ba424bf2-287b-444c-8138-5ac044216316">
           <HierarchyID>Jerarquía 1</HierarchyID>
         </Hierarchy>
-        <Hierarchy dwd:design-time-name="c71cdc6f-3ad1-4e6c-ab18-da0a8a276a5d">
+        <Hierarchy dwd:design-time-name="ce5c7b65-152a-45c1-8750-3f31fcc967d1">
           <HierarchyID>Jerarquía 2</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="a6834262-1e21-47e7-bdda-a7e6c8b40656">
+    <Dimension dwd:design-time-name="2de921f9-db78-4705-950f-7dd78102bb02">
       <ID>Dim Ubicacion</ID>
       <Name>Dim Ubicacion</Name>
       <DimensionID>Dim Ubicacion</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="2378ef4b-0326-4dad-87c1-9a24becc8750">
+        <Attribute dwd:design-time-name="1d0d4e7c-1653-4969-a282-677feb6eba44">
           <AttributeID>Id Ubicacion</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="e5e3e897-1491-4dce-b38e-e05fe8d8d7fe">
+        <Attribute dwd:design-time-name="9e469bb5-4e6f-4f0b-a0bf-e3da6ec9b4d7">
           <AttributeID>Provincia</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="40c5a5cc-2565-400a-8ef4-fb0e1983bd50">
+        <Attribute dwd:design-time-name="b235fb34-c567-47ca-9010-f3c5a6bc5785">
           <AttributeID>Municipio</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6ce97f02-442b-403f-a673-29cccaf7a4e2">
+        <Attribute dwd:design-time-name="aa6e88bc-6111-41a2-b50e-f4b9293c6a0d">
           <AttributeID>Region</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="67f0e589-1f4f-4590-9d33-562ee1cdfafa">
+        <Hierarchy dwd:design-time-name="438714f3-3d6c-42f2-ba07-4f5cddad03d6">
           <HierarchyID>Jerarquía</HierarchyID>
         </Hierarchy>
-        <Hierarchy dwd:design-time-name="619e4cd9-7143-4e7e-8725-71341531fed1">
+        <Hierarchy dwd:design-time-name="f4234239-4424-40f6-a04d-cd8d19cec60e">
           <HierarchyID>Jerarquía 1</HierarchyID>
         </Hierarchy>
-        <Hierarchy dwd:design-time-name="60854432-c313-4023-986a-725739370486">
+        <Hierarchy dwd:design-time-name="e4535c26-f597-45da-8086-86239013841a">
           <HierarchyID>Jerarquía 2</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
-    <Dimension dwd:design-time-name="71b37a2c-a5dd-4843-a37d-c6425afad0fb">
+    <Dimension dwd:design-time-name="1b7d8c00-e96f-4b02-94f8-d767a0c1a156">
       <ID>Dim EDE</ID>
       <Name>Dim EDE</Name>
       <DimensionID>Dim EDE</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="cf234b7e-9fea-48da-a461-451947e092ea">
+        <Attribute dwd:design-time-name="deb93ea6-4667-4368-bce2-c623c573b742">
           <AttributeID>Id EDE</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6660f319-2431-4d44-914a-a29a70ecd4a5">
+        <Attribute dwd:design-time-name="ad267a67-150d-4429-8eab-bda5c94de417">
           <AttributeID>Nombre</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="9a23c17e-0170-4b6a-aa02-99a9759995fb">
+    <MeasureGroup dwd:design-time-name="45b3d067-a18f-4f4c-bec8-a3815686d2be">
       <ID>Fact Energia</ID>
       <Name>Fact Energia</Name>
       <CreatedTimestamp>0001-01-01T04:00:00Z</CreatedTimestamp>
@@ -298,23 +298,23 @@
       <LastProcessed>0001-01-01T04:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="4d351ec7-a954-4038-a8ea-b75f1e9ff31e">
+        <Measure dwd:design-time-name="49306dbf-e5b2-4757-9c88-cc29c00de592">
           <ID>Energia Entregada G Wh</ID>
           <Name>Energia Entregada G Wh</Name>
-          <Source dwd:design-time-name="d2b152ad-4dea-4bd5-88aa-587aa764bc80">
+          <Source dwd:design-time-name="4cfe4102-3da0-4b2e-abc7-854643d955dd">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="4a34ef6c-cd90-4667-a9fd-a310c53caaa1">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="393449ac-bfcf-4b45-9ffa-34731b6a553f">
               <TableID>dbo_FactEnergia</TableID>
               <ColumnID>EnergiaEntregada_GWh</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="c717d4ff-e0db-4d23-b784-f64a7c17b61b">
+        <Measure dwd:design-time-name="b769fd73-66b9-4660-9eb1-0904708719a4">
           <ID>Energia Perdida G Wh</ID>
           <Name>Energia Perdida G Wh</Name>
-          <Source dwd:design-time-name="8d25cea2-b4fd-4e94-9df8-78ea8c6ee5f5">
+          <Source dwd:design-time-name="10a3a816-0022-4c16-9548-b7ef1491b1e3">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="e277fe9f-f487-47e9-ade3-c8c6e6d3c57d">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9ee9d8ba-fa2d-45bb-a1d1-1af92c27b989">
               <TableID>dbo_FactEnergia</TableID>
               <ColumnID>EnergiaPerdida_GWh</ColumnID>
             </Source>
@@ -324,16 +324,16 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1c9d4541-95c4-4f79-8ec0-531ef3dcdcde">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a635f68f-1181-460c-b102-de8443206bdc">
           <CubeDimensionID>Dim Sucursal</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="a4bfba5f-a98a-4dd4-aece-b27167f4e374">
+            <Attribute dwd:design-time-name="3165f4d4-9c9e-4c8d-b580-cc6203ee5cea">
               <AttributeID>Id Sucursal</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="0963ad72-6cea-4a14-a4a2-c6d543c5573d">
+                <KeyColumn dwd:design-time-name="1554e964-d402-4c4d-bfa6-14902aa6acbe">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="377d30ae-c621-4d9b-9766-c9d5a3bd3bb8">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9ddd604c-6e7e-4a9d-be6b-57af76fa3d6e">
                     <TableID>dbo_FactEnergia</TableID>
                     <ColumnID>IdSucursal</ColumnID>
                   </Source>
@@ -343,16 +343,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e50e70d8-ce89-40e5-b344-7436170aa0c0">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="318ca673-cb78-433a-8945-4a9f7eeeae49">
           <CubeDimensionID>Dim Tiempo</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="48dc45e2-e4ed-4b41-b11d-f0b052b32bbb">
+            <Attribute dwd:design-time-name="0b768600-45c1-43e8-8507-4b2b2699a337">
               <AttributeID>Id Tiempo</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="1d037efb-f7c0-4a7f-91a1-fdf1a90e3177">
+                <KeyColumn dwd:design-time-name="a88afb56-8c84-48ea-8d8e-2fa8794f96d4">
                   <DataType>BigInt</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="45c43750-34f8-4545-8c6b-8d080a5d729f">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6f1add75-b79e-4452-b968-21b4010935bd">
                     <TableID>dbo_FactEnergia</TableID>
                     <ColumnID>IdTiempo</ColumnID>
                   </Source>
@@ -362,16 +362,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b0d15d12-29bf-474b-af73-7a34d5c3161e">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="bc98c3f2-6e50-40ad-b0d2-ec777dd0841c">
           <CubeDimensionID>Dim Ubicacion</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="c38d0ad6-9471-4d1f-83c5-6b02e90a3adb">
+            <Attribute dwd:design-time-name="332432bf-ac5f-4c94-a04c-276e59781d9b">
               <AttributeID>Id Ubicacion</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="50a01f96-ee99-4f97-8f92-e2d73a055574">
+                <KeyColumn dwd:design-time-name="23261e52-d7d3-4221-ae92-c671755db052">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="93ddd156-a171-49c2-91e7-212719c67f0e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="003b3271-4b9f-472e-ac54-ded9bc3f2b0e">
                     <TableID>dbo_FactEnergia</TableID>
                     <ColumnID>IdUbicacion</ColumnID>
                   </Source>
@@ -381,17 +381,17 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f36d3194-20fb-4b2a-bb61-68c250f9b54f">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9e475ebb-ecbb-4e2a-91e4-6d685c2462a9">
           <CubeDimensionID>Dim EDE</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="adf5264f-db13-4f0b-8c1d-850cea14005f">
+            <Attribute dwd:design-time-name="f5d9ef32-2cfa-4b55-b22e-1129533e2c4a">
               <AttributeID>Id EDE</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="a77b74a8-522a-4101-badc-0d5dadd206e6">
+                <KeyColumn dwd:design-time-name="49edb0fe-0185-4f95-a215-abb0b17f0601">
                   <DataType>WChar</DataType>
                   <DataSize>20</DataSize>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="44049d34-2b9f-4b61-b7e6-01784adf9b6e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="eaab7433-28d7-4b50-9cf2-a9bf36eff8e1">
                     <TableID>dbo_FactEnergia</TableID>
                     <ColumnID>IdEDE</ColumnID>
                   </Source>
@@ -405,15 +405,15 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="45fca24c-c354-426e-85af-cfe087c2f7ca">
+  <Source dwd:design-time-name="2076bfb8-2a9c-4d8b-980f-3e9a4cd619c8">
     <DataSourceViewID>EDEs_EnergiaView</DataSourceViewID>
   </Source>
   <MdxScripts>
-    <MdxScript dwd:design-time-name="6bb67c05-8ebd-4c5d-9fcd-0aa197cde507">
+    <MdxScript dwd:design-time-name="5fad1dfb-663f-4c99-946a-13740ec5fc81">
       <ID>MdxScript</ID>
       <Name>MdxScript</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <CreatedTimestamp>0001-01-01T04:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T04:00:00Z</LastSchemaUpdate>
       <Commands>
         <Command>
           <Text>/*
@@ -421,15 +421,15 @@ El comando CALCULATE controla la agregación de celdas hoja en el cubo.
 Si se elimina o modifica el comando CALCULATE, se ven afectados los datos del cubo.
 Solo debe editar este comando si especifica manualmente cómo se agrega el cubo.
 */
-CALCULATE; 
+CALCULATE;  
 CREATE MEMBER CURRENTCUBE.[Measures].PorcentajeDePerdida
  AS Round(([Measures].[Energia Perdida G Wh]/[Measures].[Energia Entregada G Wh])*100,2), 
 FORMAT_STRING = "Percent", 
-VISIBLE = 1  ; 
+VISIBLE = 1  ;  
 CREATE MEMBER CURRENTCUBE.[Measures].PorcentajeDeEntrega
  AS 100 - PorcentajeDePerdida, 
 FORMAT_STRING = "Percent", 
-VISIBLE = 1  ; </Text>
+VISIBLE = 1; </Text>
         </Command>
       </Commands>
     </MdxScript>
