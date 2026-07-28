@@ -1,0 +1,23 @@
+/*1-) Top 25 sucursales con mayor perdida de energía por año*/
+select {[Measures].[Energia Entregada G Wh], 
+[Measures].[Energia Perdida G Wh]} on columns,
+non empty {[Dim EDE].[Nombre].[Nombre] * topcount([Dim Sucursal].[Nombre].[Nombre],25,[Measures].[Energia Perdida G Wh])} on rows
+from [EDEs_EnergiaCube]
+where [Dim Tiempo].[Anio].&[2020];
+
+
+/*2-) Top 5 provincias con mayor volumen de energía 
+entregada en el último año registrado*/
+select {[Measures].[Energia Entregada G Wh]} on columns,
+non empty {[Dim Ubicacion].[Region].[Region] * topcount({[Dim Ubicacion].[Provincia].[Provincia]},
+5,[Measures].[Energia Entregada G Wh])} on rows
+from [EDEs_EnergiaCube]
+where [Dim Tiempo].[Anio].&[2026];
+
+
+/*3-) Top 1, de EDE que entrego mayor energía durante el 
+primer trimestre (Trimestre 1) de cualquier año.*/
+select non empty {[Dim Tiempo].[Anio].[Anio] * 
+topcount([Dim EDE].[Nombre].[Nombre],1,[Measures].[Energia Entregada G Wh])} on columns,
+non empty {[Dim Tiempo].[Id Trimestre].&[1]} on rows
+from [EDEs_EnergiaCube];
