@@ -21,3 +21,29 @@ select non empty {[Dim Tiempo].[Anio].[Anio] *
 topcount([Dim EDE].[Nombre].[Nombre],1,[Measures].[Energia Entregada G Wh])} on columns,
 non empty {[Dim Tiempo].[Id Trimestre].&[1]} on rows
 from [EDEs_EnergiaCube];
+
+/*4-) Obtener la lista de municipios donde el PorcentajeDePerdida haya sido estrictamente 
+superior al 20% (0.20) durante el año 2020, mostrando en las columnas la Energia Entregada GWh 
+y la Energia Perdida GWh*/
+select {[Measures].[Energia Entregada G Wh],[Measures].[Energia Perdida G Wh],
+[Measures].[PorcentajeDePerdida]} on columns,
+non empty filter([Dim Ubicacion].[JerarquiaMunicipio].[Municipio].Members,
+[Measures].[PorcentajeDePerdida] > 0.20) on rows
+from [EDEs_EnergiaCube]
+where ([Dim Tiempo].[Anio].&[2020]);
+
+/*5-) Crear un miembro calculado llamado [Energia Perdida Ano Anterior] usando la función 
+PARALLELPERIOD para comparar la Energia Perdida GWh del mes de Mayo de 2023 con la pérdida 
+registrada en el mismo mes (Mayo) pero del año anterior (2022), mostrando ambas métricas en 
+las columnas y las EDEs en las filas.*/
+with 
+member [Measures].[Energia Perdida Ano Anterior] as
+(parallelperiod([Dim Tiempo].[JerarquiaYear].[Anio], 1,
+[Dim Tiempo].[JerarquiaYear].CurrentMember),
+[Measures].[Energia Perdida G Wh])
+
+select {[Measures].[Energia Perdida G Wh], 
+[Measures].[Energia Perdida Ano Anterior]} on columns,
+non empty [Dim EDE].[Nombre].[Nombre].members on rows
+from [EDEs_EnergiaCube]
+where ([Dim Tiempo].[JerarquiaYear].[Anio].&[2023],[Dim Tiempo].[Id Mes].&[5]);
