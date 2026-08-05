@@ -43,7 +43,9 @@ member [Measures].[Energia Perdida Ano Anterior] as
 [Measures].[Energia Perdida G Wh])
 
 select {[Measures].[Energia Perdida G Wh], 
-[Measures].[Energia Perdida Ano Anterior]} on columns,
+[Measures].[Energia Perdida Ano Anterior],[Measures].[PorcentajeDePerdida]} on columns,
 non empty [Dim EDE].[Nombre].[Nombre].members on rows
 from [EDEs_EnergiaCube]
 where ([Dim Tiempo].[JerarquiaYear].[Anio].&[2023],[Dim Tiempo].[Id Mes].&[5]);
+
+
