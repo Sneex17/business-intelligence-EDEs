@@ -22,15 +22,17 @@ topcount([Dim EDE].[Nombre].[Nombre],1,[Measures].[Energia Entregada G Wh])} on 
 non empty {[Dim Tiempo].[Id Trimestre].&[1]} on rows
 from [EDEs_EnergiaCube];
 
+
 /*4-) Obtener la lista de municipios donde el PorcentajeDePerdida haya sido estrictamente 
 superior al 20% (0.20) durante el año 2020, mostrando en las columnas la Energia Entregada GWh 
 y la Energia Perdida GWh*/
 select {[Measures].[Energia Entregada G Wh],[Measures].[Energia Perdida G Wh],
 [Measures].[PorcentajeDePerdida]} on columns,
-non empty filter([Dim Ubicacion].[JerarquiaMunicipio].[Municipio].Members,
+non empty filter([Dim Ubicacion].[JerarquiaMunicipio].[Municipio].members,
 [Measures].[PorcentajeDePerdida] > 0.20) on rows
 from [EDEs_EnergiaCube]
 where ([Dim Tiempo].[Anio].&[2020]);
+
 
 /*5-) Crear un miembro calculado llamado [Energia Perdida Ano Anterior] usando la función 
 PARALLELPERIOD para comparar la Energia Perdida GWh del mes de Mayo de 2023 con la pérdida 
@@ -49,3 +51,45 @@ from [EDEs_EnergiaCube]
 where ([Dim Tiempo].[JerarquiaYear].[Anio].&[2023],[Dim Tiempo].[Id Mes].&[5]);
 
 
+/*6-) Obtener el volumen total de energía entregada (en GWh) y el porcentaje de participación/contribución 
+de cada EDE con respecto al total general del país durante el año 2024, formateando el resultado de la 
+participación como un porcentaje.*/
+with 
+member [Measures].[Porcentaje Participacion EDE] as
+  ([Dim EDE].[Nombre].CurrentMember, [Measures].[Energia Entregada G Wh]) / 
+  ([Dim EDE].[Nombre].[All], [Measures].[Energia Entregada G Wh]),
+  format_string = "Percent"
+
+select
+  {[Measures].[Energia Entregada G Wh], 
+   [Measures].[Porcentaje Participacion EDE]} on columns,
+  non empty [Dim EDE].[Nombre].[Nombre].members on rows
+from [EDEs_EnergiaCube]
+where ([Dim Tiempo].[Anio].&[2024]);
+
+
+/*7-) Ranking de Empresas Distribuidoras (EDEs) según el Porcentaje de Entrega de Energía (Año 2024)*/
+with 
+set [RankingEDEs] as
+  order([Dim EDE].[Nombre].&[EDEESTE] : [Dim EDE].[Nombre].&[EDESUR], [Measures].[PorcentajeDeEntrega], bdesc)
+
+member [Measures].[Posicion Rank] as
+  rank([Dim EDE].[Nombre].CurrentMember, [RankingEDEs])
+
+select 
+  {[Measures].[Posicion Rank], 
+   [Measures].[PorcentajeDeEntrega]} on columns,
+  [RankingEDEs] on rows
+from [EDEs_EnergiaCube]
+where ([Dim Tiempo].[Anio].&[2024]);
+
+/*8-) Sucursales Críticas con Pérdida de Energía Superior a 20 GWh (Año 2023)*/
+select 
+  {[Measures].[Energia Perdida G Wh], 
+   [Measures].[PorcentajeDePerdida]} on columns,
+  non empty filter(
+    [Dim Sucursal].[Nombre].[Nombre].members,
+    [Measures].[Energia Perdida G Wh] > 20.0
+  ) on rows
+from [EDEs_EnergiaCube]
+where ([Dim Tiempo].[Anio].&[2023]);
