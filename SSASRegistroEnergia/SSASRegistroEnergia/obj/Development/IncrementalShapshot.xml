@@ -61,7 +61,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>0ClL81lPAqOBV7VvM3lQUKMP7uw=30/7/2026 21:17:5326/7/2026 19:32:27MBvZee1DuxKMzzv8ykWDd1wLf38=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
+        <TimeStamp>Yfb+s7Kj/lQTGmxn+i8ZqcUL8sM=9/8/2026 23:11:5326/7/2026 19:32:27MBvZee1DuxKMzzv8ykWDd1wLf38=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>EDEs_EnergiaCube</String>
         </ID>
@@ -78,5 +78,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-07-31T01:18:01.173333Z</LastDeployed>
+  <LastDeployed>2026-08-10T03:12:01.873333Z</LastDeployed>
 </DeploymentSnapshot>
