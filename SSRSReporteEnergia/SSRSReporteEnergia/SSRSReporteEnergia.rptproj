@@ -49,13 +49,15 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSource Include="CubeEnergiaSource.rds" />
     <DataSource Include="EnergiaSource.rds" />
   </ItemGroup>
   <ItemGroup>
-    <Report Include="ReporteGeneral.rdl" />
     <Report Include="ReporteGeneralEdeeste.rdl" />
-    <Report Include="ReporteGeneralEdenorte.rdl" />
     <Report Include="ReporteGeneralEdesur.rdl" />
+    <Report Include="ReporteGeneralPorEDE.rdl" />
+    <Report Include="ReportePorMunicipio.rdl" />
+    <Report Include="ReporteTop5Perdidas.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

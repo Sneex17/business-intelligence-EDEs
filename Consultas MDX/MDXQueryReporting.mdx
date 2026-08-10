@@ -1,0 +1,142 @@
+SELECT 
+  { 
+    [Measures].[Energia Perdida G Wh], 
+    [Measures].[PorcentajeDePerdida] 
+  } ON COLUMNS,
+  
+  GENERATE(
+    [Dim Ubicacion].[Provincia].[Provincia].Members,
+    TOPCOUNT(
+      EXISTING [Dim Ubicacion].[Municipio].[Municipio].Members,
+      5,
+      [Measures].[Energia Perdida G Wh]
+    )
+  ) ON ROWS
+
+FROM [EDEs_EnergiaCube]
+
+WHERE 
+  (
+    [Dim EDE].[Id EDE].&[ED-NORTE-3],
+    [Dim Tiempo].[Fecha].&[2026-01-01T00:00:00] : [Dim Tiempo].[Fecha].&[2026-08-01T00:00:00]
+  );
+
+
+  select {[Measures].[Energia Perdida G Wh],[Measures].[PorcentajeDePerdida] } on columns,
+  [Dim Ubicacion].[Provincia].[Provincia] * topcount([Dim Ubicacion].[Municipio].[Municipio],5,[Measures].[Energia Perdida G Wh]) on rows
+  from [EDEs_EnergiaCube]
+  where [Dim EDE].[Id EDE].&[ED-ESTE-1];
+
+
+  SELECT 
+  { 
+    [Measures].[Energia Perdida G Wh], 
+    [Measures].[PorcentajeDePerdida] 
+  } ON COLUMNS,
+
+   non empty GENERATE(
+   [Dim Ubicacion].[Provincia].[Provincia].Members,
+    [Dim Ubicacion].[Provincia].CurrentMember * 
+    TOPCOUNT(
+      EXISTING [Dim Ubicacion].[Municipio].[Municipio].Members,
+      5,
+      [Measures].[Energia Perdida G Wh]
+    )
+  ) ON ROWS
+
+FROM [EDEs_EnergiaCube]
+WHERE [Dim EDE].[Id EDE].&[ED-ESTE-1];
+--
+
+SELECT 
+  { 
+    [Measures].[Energia Perdida G Wh], 
+    [Measures].[PorcentajeDePerdida]
+  } ON COLUMNS,
+
+  non empty GENERATE(
+    NONEMPTY(
+      [Dim Ubicacion].[Provincia].[Provincia].Members,
+      [Measures].[Energia Perdida G Wh]
+    ),
+    [Dim Ubicacion].[Provincia].CurrentMember * 
+    TOPCOUNT(
+      EXISTING [Dim Ubicacion].[Municipio].[Municipio].Members,
+      5,
+      [Measures].[Energia Perdida G Wh]
+    )
+  ) ON ROWS
+
+FROM [EDEs_EnergiaCube]
+WHERE ([Dim EDE].[Id EDE].&[ED-ESTE-1], [Dim Tiempo].[Anio].&[2023], [Dim Tiempo].[Id Mes].&[1]);
+
+
+/*Top 5 municipios de cada provincia con mayor perdida de energia*/
+select 
+  { 
+    [Measures].[Energia Perdida G Wh], 
+    [Measures].[PorcentajeDePerdida] 
+  } on columns,
+
+  nonempty(
+    generate(
+      nonempty(
+        [Dim Ubicacion].[Provincia].[Provincia].Members,
+        [Measures].[Energia Perdida G Wh]
+      ),
+      [Dim Ubicacion].[Provincia].CurrentMember * 
+      topcount(
+        existing [Dim Ubicacion].[Municipio].[Municipio].Members,
+        5,
+        [Measures].[Energia Perdida G Wh]
+      )
+    )
+  ) on rows
+
+from [EDEs_EnergiaCube]
+where 
+  (
+    strtoset(@IdEDE, CONSTRAIN),
+    strtoset(@Anio, CONSTRAIN),
+    strtoset(@IdMes, CONSTRAIN)
+  );
+
+WITH 
+MEMBER [Measures].[ParameterCaption] AS [Dim Ubicacion].[Municipio].CURRENTMEMBER.MEMBER_CAPTION
+MEMBER [Measures].[ParameterValue] AS [Dim Ubicacion].[Municipio].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS [Dim Ubicacion].[Municipio].CURRENTMEMBER.LEVEL.ORDINAL 
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+[Dim Ubicacion].[Municipio].ALLMEMBERS ON ROWS
+FROM (select (strtoset(@IdEDE, constrained)) on columns from [EDEs_EnergiaCube]);
+
+ SELECT NON EMPTY { [Measures].[Energia Entregada G Wh], [Measures].[PorcentajeDeEntrega], [Measures].[Energia Perdida G Wh], [Measures].[PorcentajeDePerdida] } ON COLUMNS, 
+ NON EMPTY { ([Dim Ubicacion].[Municipio].[Municipio].ALLMEMBERS * [Dim Tiempo].[Fecha].[Fecha].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS 
+ FROM (select (strtoset(@Municipio, constrained)) on columns from [EDEs_EnergiaCube])
+ 
+ CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+
+
+
+ select 
+  { 
+    [Measures].[Energia Perdida G Wh], 
+    [Measures].[PorcentajeDePerdida] 
+  } on columns,
+
+  nonempty(
+    generate(
+      nonempty(
+        [Dim Ubicacion].[Provincia].[Provincia].Members,
+        [Measures].[Energia Perdida G Wh]
+      ),
+      [Dim Ubicacion].[Provincia].CurrentMember * 
+      topcount(
+        existing [Dim Ubicacion].[Municipio].[Municipio].Members,
+        5,
+        [Measures].[Energia Perdida G Wh]
+      )
+    )
+  ) on rows
+
+from (select (strtoset(@IdEDE, constrained),strtoset(@Anio, constrained),strtoset(@IdMes, constrained)) on columns from [EDEs_EnergiaCube])
+
