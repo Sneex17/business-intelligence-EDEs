@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|solutionrelative:SSRSReporteEnergia\\ReportePorTrimestreAnterior.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
-      "RelativeMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|solutionrelative:SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReporteTop5Perdidas.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
       "RelativeMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|solutionrelative:SSRSReporteEnergia\\ReporteTop5Perdidas.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|solutionrelative:SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReportePorMunicipio.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
@@ -74,15 +74,15 @@
               "Title": "ReportePorTrimestreAnterior.rdl [Dise\u00F1o]",
               "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReportePorTrimestreAnterior.rdl",
               "RelativeDocumentMoniker": "SSRSReporteEnergia\\ReportePorTrimestreAnterior.rdl",
-              "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReportePorTrimestreAnterior.rdl [Dise\u00F1o]",
-              "RelativeToolTip": "SSRSReporteEnergia\\ReportePorTrimestreAnterior.rdl [Dise\u00F1o]",
+              "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReportePorTrimestreAnterior.rdl [Dise\u00F1o]*",
+              "RelativeToolTip": "SSRSReporteEnergia\\ReportePorTrimestreAnterior.rdl [Dise\u00F1o]*",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACpSURBVDhPlZNBDoMgEEUf9SQQWbdnaPDUkp7BrjFwEkMXLYagIH3JLIDh8ReMAJjlGGkwsD2eIbzLfWL83pvlGFvMcowvKe/lfQDBT2C8wypdnmO8A8AqfZrkli9qWKUx3rExLGWSLgENSbeAiqRLYLzbK603hoUegVX6UDmXgkSeIOcgqDXWOAj\u002BpSnoSdMU9HD5lc9IvVNYBXQM0xlpgvcExSNdTGEVH\u002BVHpLP/GKkQAAAAAElFTkSuQmCC",
               "WhenOpened": "2026-08-11T16:52:33.472Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ReporteGeneralPorEDE.rdl [Dise\u00F1o]",
               "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl",
               "RelativeDocumentMoniker": "SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ReporteTop5Perdidas.rdl [Dise\u00F1o]",
               "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReporteTop5Perdidas.rdl",
               "RelativeDocumentMoniker": "SSRSReporteEnergia\\ReporteTop5Perdidas.rdl",
@@ -113,7 +113,8 @@
               "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReportePorMunicipio.rdl [Dise\u00F1o]",
               "RelativeToolTip": "SSRSReporteEnergia\\ReportePorMunicipio.rdl [Dise\u00F1o]",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACpSURBVDhPlZNBDoMgEEUf9SQQWbdnaPDUkp7BrjFwEkMXLYagIH3JLIDh8ReMAJjlGGkwsD2eIbzLfWL83pvlGFvMcowvKe/lfQDBT2C8wypdnmO8A8AqfZrkli9qWKUx3rExLGWSLgENSbeAiqRLYLzbK603hoUegVX6UDmXgkSeIOcgqDXWOAj\u002BpSnoSdMU9HD5lc9IvVNYBXQM0xlpgvcExSNdTGEVH\u002BVHpLP/GKkQAAAAAElFTkSuQmCC",
-              "WhenOpened": "2026-08-10T14:44:30.969Z"
+              "WhenOpened": "2026-08-10T14:44:30.969Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>18.6.11828.311</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-08-10T18:27:21.3552355Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-08-11T20:43:08.0527836Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -641,7 +641,7 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.56174cm</Size>
+                    <Size>5.05998cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox17">
                         <CanGrow>true</CanGrow>
@@ -680,7 +680,7 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>4.278cm</Size>
+                        <Size>6.79286cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox19">
                             <CanGrow>true</CanGrow>
@@ -735,7 +735,7 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.56174cm</Size>
+                    <Size>5.05998cm</Size>
                     <CellContents>
                       <Textbox Name="Provincia">
                         <CanGrow>true</CanGrow>
@@ -782,7 +782,7 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>4.278cm</Size>
+                        <Size>6.79286cm</Size>
                         <CellContents>
                           <Textbox Name="Municipio">
                             <CanGrow>true</CanGrow>
@@ -828,7 +828,7 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                     </TablixMember>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>4.278cm</Size>
+                        <Size>6.79286cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox27">
                             <CanGrow>true</CanGrow>
@@ -877,7 +877,7 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
             <Top>0.72745cm</Top>
             <Left>1.04634cm</Left>
             <Height>1.8cm</Height>
-            <Width>13.29676cm</Width>
+            <Width>18.30986cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -924,7 +924,13 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                         <Label>#PERCENT</Label>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>=Switch(
+    Parameters!IdEDE.Value = "ED-ESTE-1", "Gold",
+    Parameters!IdEDE.Value = "ED-SUR-2", "#3daaff",
+    Parameters!IdEDE.Value = "ED-NORTE-3", "Orange"
+)</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
@@ -968,6 +974,8 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Interval>1</Interval>
+                    <IntervalType>Default</IntervalType>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -1003,7 +1011,8 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
-                    <AllowLabelRotation>Rotate45</AllowLabelRotation>
+                    <Angle>-45</Angle>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -1187,6 +1196,7 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
                 <Position>TopRight</Position>
                 <ChartLegendTitle>
@@ -1206,6 +1216,7 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                 <Caption>Gráfico de Provincias</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>11pt</FontSize>
                   <FontWeight>Normal</FontWeight>
                   <TextAlign>Left</TextAlign>
                   <VerticalAlign>Top</VerticalAlign>
@@ -1232,8 +1243,8 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
             <DataSetName>DataSetTop5MunicipioPorProvincia</DataSetName>
             <Top>3.16162cm</Top>
             <Left>1.04634cm</Left>
-            <Height>6.87854cm</Height>
-            <Width>13.29676cm</Width>
+            <Height>9.55083cm</Height>
+            <Width>18.30986cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1280,10 +1291,10 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte por provincia</Value>
+                      <Value>Reporte por Provincia</Value>
                       <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>18pt</FontSize>
+                        <FontFamily>montserrat</FontFamily>
+                        <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1316,10 +1327,10 @@ from (select (strtoset(@IdEDE),strtoset(@Anio),strtoset(@IdMes)) on columns from
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Top 5 municipios con mayor perdidad de energía</Value>
+                      <Value>Top 5 Municipios con Mayor Perdidad de Energía</Value>
                       <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>montserrat</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>

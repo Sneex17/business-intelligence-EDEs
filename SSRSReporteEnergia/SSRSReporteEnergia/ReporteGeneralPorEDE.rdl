@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>18.6.11828.311</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-08-11T16:22:00.3815987Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-08-11T20:41:05.8359488Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -764,12 +764,17 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style>
+                          <FontSize>11pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                           <Format>0.00%</Format>
+                          <Color>White</Color>
                         </Style>
                         <Label>#PERCENT</Label>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>SeaGreen</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
@@ -801,9 +806,17 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                         <Y>=Sum(Fields!EnergiaPerdida_GWh.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style />
+                        <Style>
+                          <FontSize>11pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>0.00%</Format>
+                          <Color>White</Color>
+                        </Style>
+                        <UseValueAsLabel>true</UseValueAsLabel>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>#d33535</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
@@ -849,6 +862,7 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Interval>1</Interval>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -884,6 +898,8 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <Angle>-45</Angle>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -953,6 +969,7 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                         <Style>None</Style>
                       </Border>
                       <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
@@ -1066,6 +1083,7 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
               <ChartLegend Name="Default">
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
                 <Position>TopRight</Position>
                 <ChartLegendTitle>
@@ -1112,7 +1130,7 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
             <DataSetName>DataSetEnergiaGeneralPorEDE</DataSetName>
             <Top>2.89703cm</Top>
             <Left>1.04634cm</Left>
-            <Height>7.49767cm</Height>
+            <Height>9.08517cm</Height>
             <Width>19.31528cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -1162,8 +1180,8 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                     <TextRun>
                       <Value>Reporte de energía general</Value>
                       <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>18pt</FontSize>
+                        <FontFamily>montserrat</FontFamily>
+                        <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1198,16 +1216,16 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                     <TextRun>
                       <Value>Desde el </Value>
                       <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>montserrat</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Parameters!FechaInicio.Value</Value>
                       <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>montserrat</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                         <Format>d</Format>
                       </Style>
@@ -1215,16 +1233,16 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                     <TextRun>
                       <Value> hasta </Value>
                       <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>montserrat</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Parameters!FechaFin.Value</Value>
                       <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>12pt</FontSize>
+                        <FontFamily>montserrat</FontFamily>
+                        <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                         <Format>d</Format>
                       </Style>
