@@ -656,7 +656,7 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3851" scrolltop="-9618" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10742" y="21114" backcolor="2632756" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3851" scrolltop="-9618" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10742" y="21114" backcolor="2632756" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
                   <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
                 </font>
@@ -667,7 +667,7 @@
               <layoutmanager>
                 <ddsxmlobj />
               </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimEDE" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimEDE" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
                 </control>
@@ -1230,10 +1230,10 @@ VISIBLE = 1  ; </Text>
           <ID>KPI</ID>
           <Name>KPITasaDePerdida</Name>
           <Value>[Measures].[PorcentajeDePerdida]</Value>
-          <Goal>0.12</Goal>
+          <Goal>0.15</Goal>
           <Status>Case
-  When [Measures].[PorcentajeDePerdida] &lt;= 0.12 Then 1   
-  When [Measures].[PorcentajeDePerdida] &lt;= 0.15 Then 0  
+  When [Measures].[PorcentajeDePerdida] &lt;= 0.15 Then 1   
+  When [Measures].[PorcentajeDePerdida] &lt;= 0.19 Then 0  
   Else -1
 End</Status>
           <Trend>Case
@@ -1296,10 +1296,10 @@ End</Trend>
           <ID>KPI 1</ID>
           <Name>KPITasaDeEntreta</Name>
           <Value>[Measures].[PorcentajeDeEntrega]</Value>
-          <Goal>0.88</Goal>
+          <Goal>0.85</Goal>
           <Status>Case
-    When [Measures].[PorcentajeDeEntrega] &gt;= 0.88 Then 1
-    When [Measures].[PorcentajeDeEntrega] &lt;= 0.879 and [Measures].[PorcentajeDeEntrega] &gt;= 0.85 Then 0
+    When [Measures].[PorcentajeDeEntrega] &gt;= 0.85 Then 1
+    When [Measures].[PorcentajeDeEntrega] &lt;= 0.849 and [Measures].[PorcentajeDeEntrega] &gt;= 0.81 Then 0
     Else -1
 End</Status>
           <Trend>Case

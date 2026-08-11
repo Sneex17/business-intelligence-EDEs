@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReportePorMunicipio.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
       "RelativeMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|solutionrelative:SSRSReporteEnergia\\ReportePorMunicipio.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{7A8DF5C6-0CB0-B735-1326-413A7DCCAE0E}|SSRSReporteEnergia\\SSRSReporteEnergia.rptproj|solutionrelative:SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,6 +63,18 @@
             {
               "$type": "Bookmark",
               "Name": "ST:3:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReporteGeneralPorEDE.rdl [Dise\u00F1o]",
+              "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl",
+              "RelativeDocumentMoniker": "SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl",
+              "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSRSReporteEnergia\\SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl [Dise\u00F1o]",
+              "RelativeToolTip": "SSRSReporteEnergia\\ReporteGeneralPorEDE.rdl [Dise\u00F1o]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACpSURBVDhPlZNBDoMgEEUf9SQQWbdnaPDUkp7BrjFwEkMXLYagIH3JLIDh8ReMAJjlGGkwsD2eIbzLfWL83pvlGFvMcowvKe/lfQDBT2C8wypdnmO8A8AqfZrkli9qWKUx3rExLGWSLgENSbeAiqRLYLzbK603hoUegVX6UDmXgkSeIOcgqDXWOAj\u002BpSnoSdMU9HD5lc9IvVNYBXQM0xlpgvcExSNdTGEVH\u002BVHpLP/GKkQAAAAAElFTkSuQmCC",
+              "WhenOpened": "2026-08-10T18:58:51.634Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",

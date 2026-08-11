@@ -53,8 +53,6 @@
     <DataSource Include="EnergiaSource.rds" />
   </ItemGroup>
   <ItemGroup>
-    <Report Include="ReporteGeneralEdeeste.rdl" />
-    <Report Include="ReporteGeneralEdesur.rdl" />
     <Report Include="ReporteGeneralPorEDE.rdl" />
     <Report Include="ReportePorMunicipio.rdl" />
     <Report Include="ReporteTop5Perdidas.rdl" />
