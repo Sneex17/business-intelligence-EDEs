@@ -55,6 +55,7 @@
   <ItemGroup>
     <Report Include="ReporteGeneralPorEDE.rdl" />
     <Report Include="ReportePorMunicipio.rdl" />
+    <Report Include="ReportePorTrimestreAnterior.rdl" />
     <Report Include="ReporteTop5Perdidas.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
