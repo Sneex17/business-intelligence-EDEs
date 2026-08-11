@@ -1212,15 +1212,21 @@ El comando CALCULATE controla la agregación de celdas hoja en el cubo.
 Si se elimina o modifica el comando CALCULATE, se ven afectados los datos del cubo.
 Solo debe editar este comando si especifica manualmente cómo se agrega el cubo.
 */
-CALCULATE;   
+CALCULATE; 
+CREATE MEMBER CURRENTCUBE.[Measures].DiferenciaDeEnergia
+ AS [Measures].[Energia Entregada G Wh] - [Measures].[Energia Perdida G Wh], 
+VISIBLE = 1  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].PorcentajeDeDiferencia
+ AS [Measures].[PorcentajeDeEntrega] - [Measures].[PorcentajeDePerdida], 
+VISIBLE = 1  ;    
 CREATE MEMBER CURRENTCUBE.[Measures].PorcentajeDePerdida
  AS [Measures].[Energia Perdida G Wh]/[Measures].[Energia Entregada G Wh], 
 FORMAT_STRING = "Percent", 
-VISIBLE = 1  ;   
+VISIBLE = 1;    
 CREATE MEMBER CURRENTCUBE.[Measures].PorcentajeDeEntrega
  AS 1 - PorcentajeDePerdida, 
 FORMAT_STRING = "Percent", 
-VISIBLE = 1  ; </Text>
+VISIBLE = 1; </Text>
             </Command>
           </Commands>
         </MdxScript>
@@ -1232,8 +1238,8 @@ VISIBLE = 1  ; </Text>
           <Value>[Measures].[PorcentajeDePerdida]</Value>
           <Goal>0.15</Goal>
           <Status>Case
-  When [Measures].[PorcentajeDePerdida] &lt;= 0.15 Then 1   
-  When [Measures].[PorcentajeDePerdida] &lt;= 0.19 Then 0  
+  When [Measures].[PorcentajeDePerdida] &lt;= 0.17 Then 1   
+  When [Measures].[PorcentajeDePerdida] &lt;= 0.23 Then 0  
   Else -1
 End</Status>
           <Trend>Case
@@ -1298,8 +1304,8 @@ End</Trend>
           <Value>[Measures].[PorcentajeDeEntrega]</Value>
           <Goal>0.85</Goal>
           <Status>Case
-    When [Measures].[PorcentajeDeEntrega] &gt;= 0.85 Then 1
-    When [Measures].[PorcentajeDeEntrega] &lt;= 0.849 and [Measures].[PorcentajeDeEntrega] &gt;= 0.81 Then 0
+    When [Measures].[PorcentajeDeEntrega] &gt;= 0.83 Then 1
+    When [Measures].[PorcentajeDeEntrega] &lt;= 0.829 and [Measures].[PorcentajeDeEntrega] &gt;= 0.77 Then 0
     Else -1
 End</Status>
           <Trend>Case
