@@ -93,3 +93,29 @@ select
   ) on rows
 from [EDEs_EnergiaCube]
 where ([Dim Tiempo].[Anio].&[2023]);
+
+/*9-) Dinero generado en cada mes del año 2021 por ede*/
+select {[Tiempo].[Id Mes].&[1] : [Tiempo].[Id Mes].&[12]} on columns,
+non empty [EDE].[Nombre].[Nombre] * [Measures].[Monto Total] on rows
+from [FacturasSucursalesCube]
+
+/*10-) Obtener el monto total facturado por cada EDE y mes durante el año 2024, comparándolo contra el mismo período 
+del año anterior mediante ParallelPeriod, incluyendo la variación monetaria y el porcentaje de crecimiento interanual.*/
+with 
+member [Measures].[Monto Total Anio Anterior] AS
+(ParallelPeriod([Tiempo].[Anio].[Anio],1,[Tiempo].[Anio].CurrentMember),
+[Measures].[Monto Total])
+
+member [Measures].[Variacion Monto] AS
+[Measures].[Monto Total] - [Measures].[Monto Total Anio Anterior]
+
+member [Measures].[Crecimiento %] AS
+iif(ISNULL([Measures].[Monto Total Anio Anterior]) or [Measures].[Monto Total Anio Anterior] = 0,
+null,([Measures].[Monto Total] - [Measures].[Monto Total Anio Anterior]) / [Measures].[Monto Total Anio Anterior]),
+format_string = "Percert"
+
+select {[Measures].[Monto Total],[Measures].[Monto Total Anio Anterior],
+[Measures].[Variacion Monto],[Measures].[Crecimiento %]} on columns,
+non empty ([EDE].[Nombre].[Nombre].Members * [Tiempo].[Id Mes].[Id Mes].Members) on rows
+from [FacturasSucursalesCube]
+where ([Tiempo].[Anio].&[2024]);
