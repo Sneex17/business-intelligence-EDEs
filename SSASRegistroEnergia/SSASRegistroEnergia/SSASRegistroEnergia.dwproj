@@ -17,6 +17,16 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
+    <ProjectItem>
+      <Name>FacturasSucursalesCube.cube</Name>
+      <FullPath>FacturasSucursalesCube.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>FacturasSucursalesCube.partitions</Name>
+          <FullPath>FacturasSucursalesCube.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
@@ -35,6 +45,22 @@
       <Name>Dim EDE.dim</Name>
       <FullPath>Dim EDE.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Tiempo.dim</Name>
+      <FullPath>Tiempo.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>EDE.dim</Name>
+      <FullPath>EDE.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sucursal.dim</Name>
+      <FullPath>Sucursal.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Ubicacion.dim</Name>
+      <FullPath>Ubicacion.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
@@ -46,6 +72,10 @@
     <ProjectItem>
       <Name>EDEs_EnergiaView.dsv</Name>
       <FullPath>EDEs_EnergiaView.dsv</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>FacturasSucursalesView.dsv</Name>
+      <FullPath>FacturasSucursalesView.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>

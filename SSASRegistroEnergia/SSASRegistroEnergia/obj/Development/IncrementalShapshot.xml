@@ -32,6 +32,13 @@
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>v7PTima7yIkFLWLqBFqWh7FbpKQ=11/8/2026 21:24:4911/8/2026 21:24:48</TimeStamp>
+        <ID>
+          <String>FacturasSucursalesView</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
         <TimeStamp>XdoayHBFDeWqFGCvoCjN0V5BDIs=26/7/2026 19:40:3826/7/2026 19:32:27</TimeStamp>
         <ID>
@@ -60,10 +67,45 @@
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>9qZAa1KhN2xfQB8ztVqCMFGceuo=11/8/2026 21:51:3611/8/2026 21:26:00</TimeStamp>
+        <ID>
+          <String>Tiempo</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>FIbqZl1zegm4y4xSlAwD8P69ZHM=11/8/2026 21:29:1911/8/2026 21:26:00</TimeStamp>
+        <ID>
+          <String>EDE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>HpYm4it0jSOW4hd2nWWyCC1Zeow=11/8/2026 21:29:1911/8/2026 21:26:00</TimeStamp>
+        <ID>
+          <String>Sucursal</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>eWE4uFft6uyc62+4a4UhTyzpuIs=11/8/2026 21:29:3211/8/2026 21:26:00</TimeStamp>
+        <ID>
+          <String>Ubicacion</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
         <TimeStamp>0jRtfVxLIJTgL2YI3fywc5A6Lcw=11/8/2026 18:21:5526/7/2026 19:32:27MBvZee1DuxKMzzv8ykWDd1wLf38=26/7/2026 19:32:2726/7/2026 19:32:27</TimeStamp>
         <ID>
           <String>EDEs_EnergiaCube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>wVDBaYdVPVhOJiUBttXXh8YzI3k=11/8/2026 21:47:4011/8/2026 21:25:59dqwpagWdPYNcBLJJG3CEnAfA4b8=11/8/2026 21:26:0011/8/2026 21:25:59</TimeStamp>
+        <ID>
+          <String>FacturasSucursalesCube</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -78,5 +120,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-08-11T22:22:07.756667Z</LastDeployed>
+  <LastDeployed>2026-08-12T01:54:12.52Z</LastDeployed>
 </DeploymentSnapshot>

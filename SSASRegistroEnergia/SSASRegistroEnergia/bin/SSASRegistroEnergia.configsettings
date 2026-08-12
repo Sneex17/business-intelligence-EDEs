@@ -23,6 +23,18 @@
       <Dimension>
         <ID>Dim EDE</ID>
       </Dimension>
+      <Dimension>
+        <ID>Tiempo</ID>
+      </Dimension>
+      <Dimension>
+        <ID>EDE</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Sucursal</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Ubicacion</ID>
+      </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
@@ -33,6 +45,19 @@
             <Partitions>
               <Partition>
                 <ID>Fact Energia</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>FacturasSucursalesCube</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Factura Sucursal</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Factura Sucursal</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>
