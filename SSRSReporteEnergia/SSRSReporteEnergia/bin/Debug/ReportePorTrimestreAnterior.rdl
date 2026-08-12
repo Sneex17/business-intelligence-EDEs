@@ -1335,8 +1335,8 @@ WHERE (
               </Border>
               <BackgroundColor>=Switch(
     Parameters!IdEDE.Value = "ED-ESTE-1", "Gold",
-    Parameters!IdEDE.Value = "ED-SUR-2", "#3daaff",
-    Parameters!IdEDE.Value = "ED-NORTE-3", "Orange"
+    Parameters!IdEDE.Value = "ED-SUR-2", "Orange",
+    Parameters!IdEDE.Value = "ED-NORTE-3", "#3daaff"
 )</BackgroundColor>
             </Style>
           </Rectangle>

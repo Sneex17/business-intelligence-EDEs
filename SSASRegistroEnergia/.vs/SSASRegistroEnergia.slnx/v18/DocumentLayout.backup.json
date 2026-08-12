@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{43957019-0F68-6810-F661-071C5AF550D1}|SSASRegistroEnergia\\SSASRegistroEnergia.dwproj|S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\EDEs_EnergiaCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{43957019-0F68-6810-F661-071C5AF550D1}|SSASRegistroEnergia\\SSASRegistroEnergia.dwproj|solutionrelative:SSASRegistroEnergia\\EDEs_EnergiaCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{43957019-0F68-6810-F661-071C5AF550D1}|SSASRegistroEnergia\\SSASRegistroEnergia.dwproj|S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\FacturasSucursalesCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
       "RelativeMoniker": "D:0:0:{43957019-0F68-6810-F661-071C5AF550D1}|SSASRegistroEnergia\\SSASRegistroEnergia.dwproj|solutionrelative:SSASRegistroEnergia\\FacturasSucursalesCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
     },
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,55 +78,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "EDEs_EnergiaCube.cube [Dise\u00F1o]",
+              "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\EDEs_EnergiaCube.cube",
+              "RelativeDocumentMoniker": "SSASRegistroEnergia\\EDEs_EnergiaCube.cube",
+              "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\EDEs_EnergiaCube.cube [Dise\u00F1o]",
+              "RelativeToolTip": "SSASRegistroEnergia\\EDEs_EnergiaCube.cube [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-08-12T03:39:26.279Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Ubicacion.dim [Dise\u00F1o]",
               "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\Ubicacion.dim",
               "RelativeDocumentMoniker": "SSASRegistroEnergia\\Ubicacion.dim",
               "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\Ubicacion.dim [Dise\u00F1o]",
               "RelativeToolTip": "SSASRegistroEnergia\\Ubicacion.dim [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-12T01:29:20.663Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-08-12T01:29:20.663Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Sucursal.dim [Dise\u00F1o]",
               "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\Sucursal.dim",
               "RelativeDocumentMoniker": "SSASRegistroEnergia\\Sucursal.dim",
               "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\Sucursal.dim [Dise\u00F1o]",
               "RelativeToolTip": "SSASRegistroEnergia\\Sucursal.dim [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-12T01:29:05.67Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-08-12T01:29:05.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EDE.dim [Dise\u00F1o]",
               "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\EDE.dim",
               "RelativeDocumentMoniker": "SSASRegistroEnergia\\EDE.dim",
               "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\EDE.dim [Dise\u00F1o]",
               "RelativeToolTip": "SSASRegistroEnergia\\EDE.dim [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-12T01:29:00.097Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-08-12T01:29:00.097Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Tiempo.dim [Dise\u00F1o]",
               "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\Tiempo.dim",
               "RelativeDocumentMoniker": "SSASRegistroEnergia\\Tiempo.dim",
               "ToolTip": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\Tiempo.dim [Dise\u00F1o]",
               "RelativeToolTip": "SSASRegistroEnergia\\Tiempo.dim [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-08-12T01:26:41.802Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2026-08-12T01:26:41.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FacturasSucursalesCube.cube [Dise\u00F1o]",
               "DocumentMoniker": "S:\\xrami\\OneDrive - Universidad Central del Este\\Trabajos de Inteligencia de Negocios  ISW-213-1\\Practica Final\\business intelligence\\SSASRegistroEnergia\\SSASRegistroEnergia\\FacturasSucursalesCube.cube",
               "RelativeDocumentMoniker": "SSASRegistroEnergia\\FacturasSucursalesCube.cube",

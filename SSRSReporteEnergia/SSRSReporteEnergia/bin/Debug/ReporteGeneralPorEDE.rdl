@@ -764,12 +764,17 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style>
+                          <FontSize>11pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                           <Format>0.00%</Format>
+                          <Color>White</Color>
                         </Style>
                         <Label>#PERCENT</Label>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>SeaGreen</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
@@ -801,9 +806,17 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                         <Y>=Sum(Fields!EnergiaPerdida_GWh.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style />
+                        <Style>
+                          <FontSize>11pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>0.00%</Format>
+                          <Color>White</Color>
+                        </Style>
+                        <UseValueAsLabel>true</UseValueAsLabel>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>#d33535</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
@@ -956,6 +969,7 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
                         <Style>None</Style>
                       </Border>
                       <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
@@ -1069,6 +1083,7 @@ where IdEDE = @IdEDE and t.Fecha between @FechaInicio and @FechaFin</CommandText
               <ChartLegend Name="Default">
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
                 <Position>TopRight</Position>
                 <ChartLegendTitle>

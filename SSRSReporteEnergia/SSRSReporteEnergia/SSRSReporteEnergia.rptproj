@@ -53,6 +53,7 @@
     <DataSource Include="EnergiaSource.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="ReporteDineroPorMes.rdl" />
     <Report Include="ReporteGeneralPorEDE.rdl" />
     <Report Include="ReportePorMunicipio.rdl" />
     <Report Include="ReportePorTrimestreAnterior.rdl" />

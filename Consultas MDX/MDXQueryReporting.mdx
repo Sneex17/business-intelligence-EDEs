@@ -140,3 +140,134 @@ FROM (select (strtoset(@IdEDE, constrained)) on columns from [EDEs_EnergiaCube])
 
 from (select (strtoset(@IdEDE, constrained),strtoset(@Anio, constrained),strtoset(@IdMes, constrained)) on columns from [EDEs_EnergiaCube])
 
+--
+WITH 
+  -- 1. Valor del Trimestre del Año Anterior
+  MEMBER [Measures].[Energia Perdida Trimestre Anterior] AS
+    (
+      ParallelPeriod(
+        [Dim Tiempo].[Anio].[Anio], -- Nivel al que nos remontamos (1 año atrás)
+        1,                          -- Número de períodos a retroceder
+        [Dim Tiempo].[Id Trimestre].[Id Trimestre].CurrentMember
+      ),
+      [Measures].[Energia Perdida G Wh]
+    )
+
+  -- 2. Variación Absoluta en GWh (Actual vs Anterior)
+  MEMBER [Measures].[Variacion Perdida GWh] AS
+    [Measures].[Energia Perdida G Wh] - [Measures].[Energia Perdida Trimestre Anterior]
+
+  -- 3. Variación Porcentual (%)
+  MEMBER [Measures].[Variacion %] AS
+    IIF(
+      IsEmpTy([Measures].[Energia Perdida Trimestre Anterior]) OR [Measures].[Energia Perdida Trimestre Anterior] = 0,
+      NULL,
+      ([Measures].[Energia Perdida G Wh] - [Measures].[Energia Perdida Trimestre Anterior]) / [Measures].[Energia Perdida Trimestre Anterior]
+    ),
+    FORMAT_STRING = "Percent"
+
+SELECT 
+  { 
+    [Measures].[Energia Perdida G Wh], 
+    [Measures].[Energia Perdida Trimestre Anterior],
+    [Measures].[Variacion Perdida GWh],
+    [Measures].[Variacion %]
+  } ON COLUMNS,
+
+  NON EMPTY 
+    [Dim Tiempo].[Id Trimestre].[Id Trimestre].Members ON ROWS
+
+FROM [EDEs_EnergiaCube]
+where ([Dim EDE].[Id EDE].&[ED-ESTE-1],[Dim Tiempo].[Anio].&[2024])
+
+--------
+WITH 
+  MEMBER [Measures].[Energia Entregada Trimestre Anterior] AS
+    (
+      [Dim Tiempo].[Anio].&[2023],
+      [Dim Tiempo].[Id Trimestre].CurrentMember,
+	  [Measures].[Energia Entregada G Wh]
+    )
+
+  MEMBER [Measures].[Variacion GWh] AS
+    IIF(
+      IsEmpty([Measures].[Energia Entregada Trimestre Anterior]),
+      NULL,
+      [Measures].[Energia Entregada G Wh] - [Measures].[Energia Entregada Trimestre Anterior]
+    )
+
+  MEMBER [Measures].[Variacion %] AS
+    IIF(
+      IsEmpty([Measures].[Energia Entregada Trimestre Anterior]) OR [Measures].[Energia Entregada Trimestre Anterior] = 0,
+      NULL,
+      ([Measures].[Energia Entregada G Wh] - [Measures].[Energia Entregada Trimestre Anterior]) / [Measures].[Energia Entregada Trimestre Anterior]
+    ),
+    FORMAT_STRING = "Percent"
+
+SELECT 
+  { 
+    [Measures].[Energia Entregada G Wh], 
+    [Measures].[Energia Entregada Trimestre Anterior],
+    [Measures].[Variacion GWh],
+    [Measures].[Variacion %]
+  } ON COLUMNS,
+
+  NON EMPTY 
+    [Dim Tiempo].[Id Trimestre].[Id Trimestre].Members * [Dim Sucursal].[Nombre].[Nombre] ON ROWS
+
+FROM [EDEs_EnergiaCube]
+WHERE (
+  [Dim EDE].[Id EDE].&[ED-ESTE-1],
+  [Dim Tiempo].[Anio].&[2024]
+)
+
+
+
+-----
+WITH 
+  MEMBER [Measures].[Energia Entregada Trimestre Anterior] AS
+    (
+      StrToMember("[Dim Tiempo].[Anio].&[" + Format(Val(Right(@Anio, 4)) - 1) + "]"),
+      [Dim Tiempo].[Id Trimestre].CurrentMember,
+	  [Measures].[Energia Entregada G Wh]
+    )
+
+  MEMBER [Measures].[Variacion GWh] AS
+    IIF(
+      IsEmpty([Measures].[Energia Entregada Trimestre Anterior]),
+      NULL,
+      [Measures].[Energia Entregada G Wh] - [Measures].[Energia Entregada Trimestre Anterior]
+    )
+
+  MEMBER [Measures].[Variacion %] AS
+    IIF(
+      IsEmpty([Measures].[Energia Entregada Trimestre Anterior]) OR [Measures].[Energia Entregada Trimestre Anterior] = 0,
+      NULL,
+      ([Measures].[Energia Entregada G Wh] - [Measures].[Energia Entregada Trimestre Anterior]) / [Measures].[Energia Entregada Trimestre Anterior]
+    ),
+    FORMAT_STRING = "Percent"
+
+SELECT 
+  { 
+    [Measures].[Energia Entregada G Wh], 
+    [Measures].[Energia Entregada Trimestre Anterior],
+    [Measures].[Variacion GWh],
+    [Measures].[Variacion %]
+  } ON COLUMNS,
+
+  NON EMPTY 
+    [Dim Tiempo].[Id Trimestre].[Id Trimestre].Members * [Dim Sucursal].[Nombre].[Nombre] ON ROWS
+
+FROM [EDEs_EnergiaCube]
+WHERE (
+  StrToSet(@IdEDE),
+  StrToSet(@Anio)
+)
+--
+select {[Measures].[Monto Total]} on columns,
+non empty {[Sucursal].[Nombre].[Nombre] * ([Tiempo].[Id Mes].&[1] : [Tiempo].[Id Mes].&[12])} on rows
+from [FacturasSucursalesCube]
+where (
+  StrToSet(@IdEDE),
+  StrToSet(@Anio)
+)
